@@ -67,7 +67,7 @@ body {
   }
 
   .bottombar {
-    @apply fixed bottom-0 z-10 w-full border-t border-white/10 bg-glassmorphism  backdrop-blur-lg  md:hidden;
+    @apply fixed bottom-0 z-10 w-full border-t border-white/10 bg-glassmorphism xs:px-4  backdrop-blur-lg  md:hidden;
   }
 
   .bottombar_container {
