@@ -30,7 +30,7 @@ export default function RootLayout({
     >
       <html lang='es'>
       <head>
-        <meta property="og:image" content="/instagram-12.png" />
+        <meta property="og:image" content="https://app-valdi.s3.amazonaws.com/instagram-12.png" />
       </head>
         <body className={`${inter.className}  w-full  bg-dark-1 flex flex-col  items-center `}>
           <header className="flex justify-start w-full p-5 mb-14">
