@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { formatDateString } from "@/lib/utils";
 import DeleteThread from "../forms/DeleteThread";
+import Comentar from "../ui/comentar";
 
 interface Props {
   id: string;
@@ -38,6 +39,7 @@ function ThreadCard({
   comments,
   isComment,
 }: Props) {
+
   return (
     <article
       className={`flex w-full flex-col   border-b border-white/10 ${
@@ -76,16 +78,7 @@ function ThreadCard({
                   height={24}
                   className='cursor-pointer object-contain'
                 /> */}
-                <Link href={`/thread/${id}`} className="flex items-center">
-                  <img
-                    src='/assets/reply.svg'
-                    alt='heart'
-                    width={24}
-                    height={24}
-                    className='cursor-pointer  object-contain'
-                  />
-                  <p className="text-violet-200/50 text-subtle-medium">Comentar</p>
-                </Link>
+                <Comentar id={id} />
                 {/* <img
                   src='/assets/repost.svg'
                   alt='heart'

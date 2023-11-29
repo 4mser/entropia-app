@@ -65,7 +65,7 @@ function Comment({ threadId, currentUserImg, currentUserId }: Props) {
                 <Input
                   type='text'
                   {...field}
-                  placeholder='Comment...'
+                  placeholder='Responder...'
                   className='no-focus text-light-1 outline-none'
                 />
               </FormControl>
@@ -74,7 +74,7 @@ function Comment({ threadId, currentUserImg, currentUserId }: Props) {
         />
 
         <Button type='submit' className='comment-form_btn'>
-          Responder
+          Publicar
         </Button>
       </form>
     </Form>

@@ -20,14 +20,14 @@ function ProfileHeader({
   type,
 }: Props) {
   return (
-    <div className='flex w-full flex-col justify-start'>
+    <div className='flex w-full flex-col justify-start p-5'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-3'>
-          <div className='relative h-20 w-20 object-cover'>
+          <div className='relative overflow-hidden rounded-full h-20 w-20'>
             <img
               src={imgUrl}
               alt='logo'
-              className='rounded-full object-cover shadow-2xl'
+              className='w-full h-full object-cover shadow-2xl'
             />
           </div>
 

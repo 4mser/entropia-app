@@ -78,7 +78,7 @@ function ThreadCommentCard({
                     height={24}
                     className='cursor-pointer object-contain'
                   />
-                  <p className="text-violet-200/50 text-subtle-medium">Comentar</p>
+                  <p className="text-violet-200/50 text-subtle-medium">Responder</p>
 
                 </Link>
                 
