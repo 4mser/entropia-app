@@ -38,7 +38,7 @@ function CommunityCard({ id, name, username, imgUrl, bio, members }: Props) {
       <div className='mt-5 flex flex-wrap items-center justify-between gap-3'>
         <Link href={`/communities/${id}`}>
           <Button size='sm' className='community-card_btn'>
-            View
+            Ver
           </Button>
         </Link>
 
@@ -58,7 +58,7 @@ function CommunityCard({ id, name, username, imgUrl, bio, members }: Props) {
             ))}
             {members.length > 3 && (
               <p className='ml-1 text-subtle-medium text-gray-1'>
-                {members.length}+ Users
+                {members.length}+ Usuarios
               </p>
             )}
           </div>
