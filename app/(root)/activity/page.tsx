@@ -16,9 +16,9 @@ async function Page() {
 
   return (
     <>
-      <h1 className='head-text'>Actividad</h1>
+      <h1 className='text-heading2-semibold text-light-2 p-5'>Actividad</h1>
 
-      <section className='mt-10 flex flex-col gap-5'>
+      <section className=' flex flex-col gap-5'>
         {activity.length > 0 ? (
           <>
             {activity.map((activity) => (
