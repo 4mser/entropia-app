@@ -56,7 +56,7 @@ const LeftSidebar = () => {
                 height={24}
               />
 
-              <p className='text-light-2 max-lg:hidden'>Logout</p>
+              <p className='text-light-2 max-lg:hidden'>Cerrar sesión</p>
             </div>
           </SignOutButton>
         </SignedIn>
