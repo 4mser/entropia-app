@@ -27,7 +27,7 @@ interface Props {
   isComment?: boolean;
 }
 
-function ThreadCard({
+function ThreadCommentCard({
   id,
   currentUserId,
   parentId,
@@ -40,8 +40,8 @@ function ThreadCard({
 }: Props) {
   return (
     <article
-      className={`flex w-full flex-col   border-b border-white/10 ${
-        isComment ? "px-0 xs:px-7" : "bg-dark-1 p-7"
+      className={`flex w-full flex-col rounded-xl ${
+        isComment ? "px-0 xs:px-7" : "bg-dark-2 p-7"
       }`}
     >
       <div className='flex items-start justify-between'>
@@ -67,39 +67,21 @@ function ThreadCard({
 
             <p className='mt-2 text-small-regular text-light-2'>{content}</p>
 
-            <div className={`${isComment && "mb-10"} mt-2 flex flex-col gap-3`}>
+            <div className={`${isComment && "mb-10"} mt-5 flex flex-col gap-3`}>
               <div className='flex gap-3.5'>
-                {/* <img
-                  src='/assets/heart-gray.svg'
-                  alt='heart'
-                  width={24}
-                  height={24}
-                  className='cursor-pointer object-contain'
-                /> */}
+                
                 <Link href={`/thread/${id}`} className="flex items-center">
                   <img
                     src='/assets/reply.svg'
                     alt='heart'
                     width={24}
                     height={24}
-                    className='cursor-pointer  object-contain'
+                    className='cursor-pointer object-contain'
                   />
                   <p className="text-violet-200/50 text-subtle-medium">Comentar</p>
+
                 </Link>
-                {/* <img
-                  src='/assets/repost.svg'
-                  alt='heart'
-                  width={24}
-                  height={24}
-                  className='cursor-pointer object-contain'
-                /> */}
-                {/* <img
-                  src='/assets/share.svg'
-                  alt='heart'
-                  width={24}
-                  height={24}
-                  className='cursor-pointer object-contain'
-                /> */}
+                
               </div>
 
               {isComment && comments.length > 0 && (
@@ -164,4 +146,4 @@ function ThreadCard({
   );
 }
 
-export default ThreadCard;
+export default ThreadCommentCard;

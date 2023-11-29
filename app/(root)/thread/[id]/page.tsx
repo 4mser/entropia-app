@@ -6,6 +6,7 @@ import ThreadCard from "@/components/cards/ThreadCard";
 
 import { fetchUser } from "@/lib/actions/user.actions";
 import { fetchThreadById } from "@/lib/actions/thread.actions";
+import ThreadCommentCard from "@/components/cards/ThreadCommentCard";
 
 export const revalidate = 0;
 
@@ -45,7 +46,7 @@ async function page({ params }: { params: { id: string } }) {
 
       <div className='mt-10'>
         {thread.children.map((childItem: any) => (
-          <ThreadCard
+          <ThreadCommentCard
             key={childItem._id}
             id={childItem._id}
             currentUserId={user.id}

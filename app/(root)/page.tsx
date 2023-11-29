@@ -28,7 +28,7 @@ async function Home({
     <>
       {/* <h1 className='head-text text-left'>Inicio</h1> */}
 
-      <section className='mt-9 flex flex-col gap-10'>
+      <section className=' flex flex-col '>
         {result.posts.length === 0 ? (
           <p className='no-result'>No se encontraron posts</p>
         ) : (
