@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { sidebarLinks } from "@/constants";
+import { bottombarLinks } from "@/constants";
 
 function Bottombar() {
   const pathname = usePathname();
@@ -11,7 +11,7 @@ function Bottombar() {
   return (
     <section className='bottombar'>
       <div className='bottombar_container'>
-        {sidebarLinks.map((link) => {
+        {bottombarLinks.map((link) => {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
             pathname === link.route;

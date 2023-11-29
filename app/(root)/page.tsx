@@ -6,6 +6,7 @@ import Pagination from "@/components/shared/Pagination";
 
 import { fetchPosts } from "@/lib/actions/thread.actions";
 import { fetchUser } from "@/lib/actions/user.actions";
+import PostThreadButton from "@/components/ui/post-thread-button";
 
 async function Home({
   searchParams,
@@ -45,6 +46,7 @@ async function Home({
                 comments={post.children}
               />
             ))}
+            <PostThreadButton />
           </>
         )}
       </section>
