@@ -13,11 +13,11 @@ async function Page() {
   if (!userInfo?.onboarded) redirect("/onboarding");
 
   return (
-    <>
-      <h1 className='head-text'>Crear Post</h1>
+    <section className="p-5">
+      <h1 className='text-heading2-semibold text-white'>Crear Post</h1>
 
       <PostThread userId={userInfo._id} />
-    </>
+    </ section>
   );
 }
 

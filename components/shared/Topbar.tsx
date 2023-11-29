@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Topbar() {
   return (
-    <nav className='topbar'>
+    <nav className='topbar md:hidden' >
       <Link href='/' className='flex items-center gap-4'>
         <img src='/entropia.svg' alt='logo' width={110} height={110} />
       </Link>

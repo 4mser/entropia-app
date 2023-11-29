@@ -19,6 +19,8 @@ import { Textarea } from "@/components/ui/textarea";
 
 import { ThreadValidation } from "@/lib/validations/thread";
 import { createThread } from "@/lib/actions/thread.actions";
+import { useState } from "react";
+import Loader from "../ui/loader";
 
 interface Props {
   userId: string;
@@ -27,6 +29,8 @@ interface Props {
 function PostThread({ userId }: Props) {
   const router = useRouter();
   const pathname = usePathname();
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { organization } = useOrganization();
 
@@ -39,20 +43,25 @@ function PostThread({ userId }: Props) {
   });
 
   const onSubmit = async (values: z.infer<typeof ThreadValidation>) => {
-    await createThread({
-      text: values.thread,
-      author: userId,
-      communityId: organization ? organization.id : null,
-      path: pathname,
-    });
+    setIsSubmitting(true)
+    try {
+      await createThread({
+        text: values.thread,
+        author: userId,
+        communityId: organization ? organization.id : null,
+        path: pathname,
+      });
 
-    router.push("/");
+      router.push("/");
+    } finally {
+      setIsSubmitting(false); // Reset isSubmitting to false when the submission is complete
+    }
   };
 
   return (
     <Form {...form}>
       <form
-        className='mt-10 flex flex-col justify-start gap-10'
+        className='mt-5 flex flex-col justify-start gap-5'
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FormField
@@ -64,15 +73,19 @@ function PostThread({ userId }: Props) {
                 Contenido
               </FormLabel>
               <FormControl className='no-focus border border-dark-4 bg-dark-3 text-light-1'>
-                <Textarea rows={15} {...field} />
+                <Textarea rows={5} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <Button type='submit' className='bg-cyan-600'>
-          Publicar
+        <Button type='submit' className='bg-cyan-600 hover:bg-cyan-700'>
+        {isSubmitting ? (
+        <>
+          <Loader />
+        </>
+        ) : ('Publicar')}
         </Button>
       </form>
     </Form>
