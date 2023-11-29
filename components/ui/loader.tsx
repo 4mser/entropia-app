@@ -16,7 +16,7 @@ interface LoaderProps {
 
 const Loader: React.FC<LoaderProps> = () => {
   quantum.register();
-  return <l-quantum size="16" speed="1.75" color="white"></l-quantum>;
+  return <l-quantum  speed="1.75" color="white"></l-quantum>;
 };
 
 export default Loader;
