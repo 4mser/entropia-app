@@ -42,7 +42,7 @@ export default function RootLayout({
               <div className='w-full max-w-4xl'>
                 <Link href="https://demoentropia.vercel.app/" target="_blank">
                 
-                <div className="w-full h-11 flex justify-center items-center text-center bg-gradient-to-tr from-blue/80 to-green-600/80 hover:from-blue/100 hover:to-green-600/100 text-white">Visita nuestra nueva landpage </div>
+                <div className="w-full h-11 flex justify-center items-center text-center bg-gradient-to-tr from-blue/80 to-green-600/80 hover:from-blue/100 hover:to-green-600/100 text-white">Visita nuestra nueva landpage -> </div>
                 </Link>
                 
                 {children}
