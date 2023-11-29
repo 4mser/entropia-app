@@ -29,6 +29,9 @@ export default function RootLayout({
       }}
     >
       <html lang='en'>
+        <head>
+          <meta property="og:image" content="/instagram-12.png" />
+        </head>
         <body className={inter.className}>
           <Topbar />
 

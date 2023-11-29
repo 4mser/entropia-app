@@ -10,8 +10,9 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Auth",
-  description: "Registro Entropía",
+  title: "Entropía",
+  description: "Explorers of adventure",
+
 };
 
 export default function RootLayout({
@@ -28,6 +29,9 @@ export default function RootLayout({
       }}
     >
       <html lang='es'>
+      <head>
+        <meta property="og:image" content="/instagram-12.png" />
+      </head>
         <body className={`${inter.className}  w-full  bg-dark-1 flex flex-col  items-center `}>
           <header className="flex justify-start w-full p-5 mb-14">
           <img src="/entropia.svg" alt="logo" className="w-32" />
