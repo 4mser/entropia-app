@@ -9,6 +9,7 @@ import LeftSidebar from "@/components/shared/LeftSidebar";
 import Bottombar from "@/components/shared/Bottombar";
 import RightSidebar from "@/components/shared/RightSidebar";
 import Topbar from "@/components/shared/Topbar";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +39,14 @@ export default function RootLayout({
           <main className='flex flex-row'>
             <LeftSidebar />
             <section className='main-container'>
-              <div className='w-full max-w-4xl'>{children}</div>
+              <div className='w-full max-w-4xl'>
+                <Link href="https://demoentropia.vercel.app/" target="_blank">
+                
+                <div className="w-full h-11 flex justify-center items-center text-center bg-gradient-to-tr from-blue/80 to-green-600/80 hover:from-blue/100 hover:to-green-600/100 text-white">Visita nuestra nueva landpage </div>
+                </Link>
+                
+                {children}
+              </div>
             </section>
             {/* @ts-ignore */}
             <RightSidebar />
