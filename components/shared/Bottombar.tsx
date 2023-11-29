@@ -25,8 +25,8 @@ function Bottombar() {
               <img
                 src={link.imgURL}
                 alt={link.label}
-                width={23}
-                height={23}
+                width={20}
+                height={20}
                 className='object-contain'
               />
 
