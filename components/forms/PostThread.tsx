@@ -19,7 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 import { ThreadValidation } from "@/lib/validations/thread";
 import { createThread } from "@/lib/actions/thread.actions";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Loader from "../ui/loader";
 
 interface Props {
@@ -31,7 +31,6 @@ function PostThread({ userId }: Props) {
   const pathname = usePathname();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   const { organization } = useOrganization();
 
@@ -43,18 +42,8 @@ function PostThread({ userId }: Props) {
     },
   });
 
-  useEffect(() => {
-    // Simulate loading delay (you can replace this with your actual loading logic)
-    const loadingTimeout = setTimeout(() => {
-      setIsLoaded(true);
-    }, 1000);
-
-    // Cleanup function to clear the timeout if the component unmounts
-    return () => clearTimeout(loadingTimeout);
-  }, []);
-
   const onSubmit = async (values: z.infer<typeof ThreadValidation>) => {
-    setIsSubmitting(true);
+    setIsSubmitting(true)
     try {
       await createThread({
         text: values.thread,
@@ -65,18 +54,9 @@ function PostThread({ userId }: Props) {
 
       router.push("/");
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false); // Reset isSubmitting to false when the submission is complete
     }
   };
-
-  if (!isLoaded) {
-    // Render loader or any loading indicator here
-    return (
-      <section className="w-full min-h-[70vh] flex items-center justify-center">
-        <Loader />
-      </section>
-    );
-  }
 
   return (
     <Form {...form}>
@@ -100,14 +80,12 @@ function PostThread({ userId }: Props) {
           )}
         />
 
-        <Button type='submit' className='bg-cyan-600 hover:bg-cyan-700' disabled={isSubmitting}>
-          {isSubmitting ? (
-            <>
-              <Loader />
-            </>
-          ) : (
-            'Publicar'
-          )}
+        <Button type='submit' className='bg-cyan-600 hover:bg-cyan-700'>
+        {isSubmitting ? (
+        <>
+          <Loader />
+        </>
+        ) : ('Publicar')}
         </Button>
       </form>
     </Form>

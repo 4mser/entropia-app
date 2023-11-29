@@ -26,7 +26,6 @@ async function Home({
 
   return (
     <>
-      {/* <h1 className='head-text text-left'>Inicio</h1> */}
 
       <section className=' flex flex-col '>
         {result.posts.length === 0 ? (
