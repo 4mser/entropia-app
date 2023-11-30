@@ -102,7 +102,11 @@ function ThreadCard({
                   </p>
                 </Link>
               )}
+              
             </div>
+            <p className={`${!community && comments.length === 0 ? 'pt-5 bg-dark-1 text-subtle-medium text-gray-1  -translate-x-14 ' : 'hidden'}`}>
+                {formatDateString(createdAt)}
+              </p>
           </div>
         </div>
 
@@ -116,41 +120,54 @@ function ThreadCard({
       </div>
 
       {!isComment && comments.length > 0 && (
-        <div className='ml-1 mt-3 flex items-center gap-2'>
+        <section>
+          <div className='ml-1 mt-3 flex items-center gap-2'>
           {comments.slice(0, 2).map((comment, index) => (
-            <img
+            <div className={`${index !== 0 && "-ml-5"} w-6 h-6 flex justify-center items-center   bg-gradient-to-tr from-blue to-green-700 p-px rounded-full object-cover`}>
+              <img
               key={index}
               src={comment.author.image}
               alt={`user_${index}`}
-              className={`${index !== 0 && "-ml-5"} w-7 h-7 shadow-md border-2 p-[3px] border-white/40  bg-dark-2 rounded-full object-cover`}
+              className="bg-dark-1 w-full p-[2px] h-full rounded-full"
             />
+            </div>
           ))}
 
           <Link href={`/thread/${id}`}>
             <p className='mt-1 text-subtle-medium text-gray-1'>
+              
               {comments.length} comentari{comments.length > 1 ? "os" : "o"}
             </p>
+            <p className='text-subtle-medium text-gray-1'>
+            
+          </p>
+
           </Link>
+          
         </div>
+        <p className={`${!community ? 'mt-5 text-subtle-medium text-gray-1' : 'hidden'}`}>
+          {formatDateString(createdAt)}
+        </p>
+        </section>
       )}
 
       {!isComment && community && (
         <Link
           href={`/communities/${community.id}`}
-          className='mt-5 flex items-center'
+          className='mt-5 flex items-center gap-2'
         >
           <p className='text-subtle-medium text-gray-1'>
             {formatDateString(createdAt)}
-            {community && ` - ${community.name} Community`}
+            {community && ` - ${community.name}`}
           </p>
 
+          <div className="rounded-full w-3 border border-green-700 p-px h-3 overflow-hidden">
           <img
             src={community.image}
             alt={community.name}
-            width={14}
-            height={14}
-            className='ml-1 rounded-full object-cover'
+            className=' w-full h-full rounded-full   object-cover'
           />
+          </div>
         </Link>
       )}
     </article>
