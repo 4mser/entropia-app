@@ -25,13 +25,14 @@ function Bottombar() {
             <Link
               href={link.route}
               key={link.label}
-              className={`bottombar_link ${isActive && "border-t-2  border-cyan-500"}`}
+              className={`bottombar_link w-16 ${isActive ? "opacity-100" : "opacity-70"}`}
             >
+              <div className={`h-1  absolute top-0 bg-gradient-to-tr rounded-full from-blue to-green-700 shadow-custom transition-all duration-300 ease-in-out ${pathname !== link.route ? 'w-0 ' : 'w-full'}`} />
               <img
                 src={link.imgURL}
                 alt={link.label}
-                width={20}
-                height={20}
+                width={22}
+                height={22}
                 className='object-contain'
               />
 

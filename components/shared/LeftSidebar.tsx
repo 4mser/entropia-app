@@ -30,16 +30,18 @@ const LeftSidebar = () => {
             <Link
               href={link.route}
               key={link.label}
-              className={`leftsidebar_link ${isActive && "bg-cyan-600 "}`}
+              className={`leftsidebar_link hover:bg-gradient-to-tr  ${isActive ? "group bg-gradient-to-tr from-blue to-green-700" : "from-gray-600 to-white/20 transition opacity-75 hover:opacity-100"}`}
             >
-              <img
-                src={link.imgURL}
-                alt={link.label}
-                width={24}
-                height={24}
-              />
+              <div className="rounded-full py-2.5 bg-dark-1 bg-opacity-70 w-full px-4 flex group-hover:bg-opacity-80 transition  items-center gap-2">
+                <img
+                  src={link.imgURL}
+                  alt={link.label}
+                  width={24}
+                  height={24}
+                />
 
-              <p className='text-light-1 max-lg:hidden'>{link.label}</p>
+                <p className='text-light-1 max-lg:hidden'>{link.label}</p>
+              </div>
             </Link>
           );
         })}

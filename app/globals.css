@@ -9,7 +9,7 @@ body {
 @layer components {
   /* main */
   .main-container {
-    @apply flex min-h-screen flex-1 flex-col items-center bg-dark-1  pb-10 pt-[79px] sm:px-0 md:pt-0;
+    @apply flex min-h-screen flex-1 flex-col items-center bg-dark-1  pb-10 pt-[79px] sm:px-0 md:pb-0 md:pt-0;
   }
 
   /* Head Text */
@@ -67,11 +67,11 @@ body {
   }
 
   .bottombar {
-    @apply fixed bottom-0 z-10 w-full border-t border-white/10 bg-glassmorphism xs:px-4  backdrop-blur-lg  md:hidden;
+    @apply fixed bottom-0 z-10 w-full border-t border-white/10 bg-glassmorphism xs:px-4  backdrop-blur-lg  md:hidden overflow-hidden;
   }
 
   .bottombar_container {
-    @apply flex items-center justify-around gap-3 xs:gap-5;
+    @apply flex items-center justify-around gap-3 xs:gap-5 ;
   }
 
   .bottombar_link {
@@ -83,7 +83,7 @@ body {
   }
 
   .leftsidebar_link {
-    @apply relative flex justify-start gap-4 rounded-lg p-4;
+    @apply relative flex justify-start gap-4 rounded-full p-px;
   }
 
   .pagination {
