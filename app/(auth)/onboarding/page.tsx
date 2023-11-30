@@ -21,14 +21,16 @@ async function Page() {
   };
 
   return (
-    <main className='mx-auto flex max-w-3xl flex-col justify-start px-10 py-20'>
+    <main className='custom-scrollbar absolute top-0 left-0 bg-dark-1 flex w-full flex-col justify-center px-5 py-7 items-center md:pt-16'>
+      <section className="max-w-3xl h-fit">
       <h1 className='head-text'>Completa tu perfil</h1>
-      <p className='mt-3 text-base-regular text-light-2'>
-        Completa tu perfil para continuar en Entropía
+      <p className='mt-2 text-base-regular text-light-2 opacity-80'>
+        Para una experiencia más personalizada 👽💫
       </p>
 
-      <section className='mt-9 bg-dark-2 p-10'>
-        <AccountProfile user={userData} btnTitle='Continue' />
+      <section className='mt-5 bg-dark-2 p-5 shadow-lg rounded-3xl'>
+        <AccountProfile user={userData} btnTitle='Continuar' />
+      </section>
       </section>
     </main>
   );

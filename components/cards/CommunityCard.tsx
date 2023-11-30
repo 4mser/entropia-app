@@ -36,25 +36,34 @@ function CommunityCard({ id, name, username, imgUrl, bio, members }: Props) {
       <p className='mt-4 text-subtle-medium text-gray-1'>{bio}</p>
 
       <div className='mt-5 flex flex-wrap items-center justify-between gap-3'>
-        <Link href={`/communities/${id}`}>
+        {/* <Link href={`/communities/${id}`}>
           <Button size='sm' className='community-card_btn'>
             Ver
           </Button>
-        </Link>
+        </Link> */}
+
+        <Link 
+        href={`/communities/${id}`}
+        className='rounded-full w-fit h-fit bg-gradient-to-r group from-blue to-green-700 p-px'
+        >
+        <div className="py-1 px-5 bg-dark-1/80 text-subtle-medium rounded-full text-white/90 transition group-hover:bg-dark-1/90" >
+          Ver
+        </div>
+      </Link>
 
         {members.length > 0 && (
           <div className='flex items-center'>
             {members.map((member, index) => (
-              <img
-                key={index}
-                src={member.image}
-                alt={`user_${index}`}
-                width={28}
-                height={28}
-                className={`${
-                  index !== 0 && "-ml-2"
-                } rounded-full object-cover`}
-              />
+                <div className={`${
+                  index !== 0 && "-ml-5 "
+                }  w-8 h-8 p-[2px] rounded-full bg-gradient-to-tr from-blue to-green-700 overflow-hidden `}>
+                  <img
+                  key={index}
+                  src={member.image}
+                  alt={`user_${index}`}
+                  className="object-cover rounded-full p-1 bg-dark-1 w-full h-full"
+                />
+              </div>
             ))}
             
             {members.length > 3 && (

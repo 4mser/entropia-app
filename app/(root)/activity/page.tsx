@@ -16,21 +16,21 @@ async function Page() {
 
   return (
     <>
-      <h1 className='text-heading2-semibold text-light-2 p-5'>Actividad</h1>
+      <h1 className='text-heading2-semibold text-light-2 p-5'> Actividad</h1>
 
-      <section className=' flex flex-col gap-5'>
+      <section className=' flex flex-col'>
         {activity.length > 0 ? (
           <>
             {activity.map((activity) => (
               <Link key={activity._id} href={`/thread/${activity.parentId}`}>
-                <article className='activity-card'>
-                  <Image
-                    src={activity.author.image}
-                    alt='user_logo'
-                    width={20}
-                    height={20}
-                    className='rounded-full object-cover'
-                  />
+                <article className='flex items-center w-full p-5 border-b  border-white/10 gap-2'>
+                  <div className="w-7 h-7 rounded-full overflow-hidden bg-gradient-to-tr from-blue to-green-700 p-px">
+                    <img
+                      src={activity.author.image}
+                      alt='user_logo'
+                      className='w-full h-full rounded-full p-px bg-dark-1 object-cover'
+                    />
+                  </div>
                   <p className='!text-small-regular text-light-1'>
                     <span className='mr-1 text-cyan-500 font-semibold'>
                       {activity.author.name}
@@ -42,7 +42,7 @@ async function Page() {
             ))}
           </>
         ) : (
-          <p className='!text-base-regular text-light-3'>Sin actividad reciente</p>
+          <p className='!text-base-regular text-light-3 px-5'>Sin actividad reciente</p>
         )}
       </section>
     </>

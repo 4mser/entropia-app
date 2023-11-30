@@ -35,7 +35,7 @@ function UserCard({ id, name, username, imgUrl, personType }: Props) {
       </div>
 
       <Button
-        className='user-card_btn'
+        className='rounded-full w-fit h-fit bg-gradient-to-r group from-blue to-green-700 p-px'
         onClick={() => {
           if (isCommunity) {
             router.push(`/communities/${id}`);
@@ -44,7 +44,9 @@ function UserCard({ id, name, username, imgUrl, personType }: Props) {
           }
         }}
       >
-        Ver
+        <div className="py-1 px-5 bg-dark-1/80 text-subtle-medium rounded-full text-white/90 transition group-hover:bg-dark-1/90" >
+          Ver
+        </div>
       </Button>
     </article>
   );
