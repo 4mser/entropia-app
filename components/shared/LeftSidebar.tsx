@@ -14,11 +14,11 @@ const LeftSidebar = () => {
 
   return (
     <section className='custom-scrollbar leftsidebar'>
-      <Link href='/' className='flex absolute top-6  items-center gap-4 mb-5 px-6'>
+      <Link href='/' className='flex absolute top-6  items-center gap-4 mb-5 px-7'>
           <img src='/entropia.svg' alt='logo' width={110} height={110} />
         </Link>
-      <div className='flex w-full flex-1 flex-col gap-6 px-6 mt-12'>
-        
+      <div className='flex w-full flex-1 flex-col gap-7 px-6 mt-12'>
+      
         {sidebarLinks.map((link) => {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
@@ -32,7 +32,7 @@ const LeftSidebar = () => {
               key={link.label}
               className={`leftsidebar_link hover:bg-gradient-to-tr  ${isActive ? "group bg-gradient-to-tr from-blue to-green-700" : "from-gray-600 to-white/20 transition opacity-75 hover:opacity-100"}`}
             >
-              <div className="rounded-full py-2.5 bg-dark-1 bg-opacity-70 w-full px-4 flex group-hover:bg-opacity-80 transition  items-center gap-2">
+              <div className="rounded-full py-2.5 bg-dark-1 bg-opacity-70 w-full px-4 flex group-hover:bg-opacity-80 transition  items-center gap-3">
                 <img
                   src={link.imgURL}
                   alt={link.label}
@@ -45,6 +45,7 @@ const LeftSidebar = () => {
             </Link>
           );
         })}
+        
       </div>
 
       <div className='mt-10 px-6'>

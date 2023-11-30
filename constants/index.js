@@ -60,13 +60,13 @@ export const bottombarLinks = [
 ];
 
 export const profileTabs = [
-  { value: "threads", label: "Threads", icon: "/assets/reply.svg" },
-  { value: "replies", label: "Replies", icon: "/assets/members.svg" },
-  { value: "tagged", label: "Tagged", icon: "/assets/tag.svg" },
+  { value: "threads", label: "Posts", icon: "/assets/comentarios.svg" },
+  { value: "replies", label: "Respuestas", icon: "/assets/users.svg" },
+  { value: "tagged", label: "Etiquetas", icon: "/assets/tag-linear.svg" },
 ];
 
 export const communityTabs = [
-  { value: "threads", label: "Threads", icon: "/assets/reply.svg" },
-  { value: "members", label: "Members", icon: "/assets/members.svg" },
+  { value: "threads", label: "Posts", icon: "/assets/comentarios.svg" },
+  { value: "members", label: "Miembros", icon: "/assets/users.svg" },
   { value: "requests", label: "Requests", icon: "/assets/request.svg" },
 ];

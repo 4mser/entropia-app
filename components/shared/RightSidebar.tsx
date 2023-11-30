@@ -1,9 +1,10 @@
-import { currentUser } from "@clerk/nextjs";
+import { OrganizationSwitcher, currentUser } from "@clerk/nextjs";
 
 import UserCard from "../cards/UserCard";
 
 import { fetchCommunities } from "@/lib/actions/community.actions";
 import { fetchUsers } from "@/lib/actions/user.actions";
+import { dark } from "@clerk/themes";
 
 async function RightSidebar() {
   const user = await currentUser();
@@ -18,8 +19,16 @@ async function RightSidebar() {
 
   return (
     <section className='custom-scrollbar rightsidebar'>
-      <div className='flex flex-1 flex-col justify-start'>
-        <h3 className='text-heading4-medium text-light-1'>
+      <OrganizationSwitcher
+          appearance={{
+            baseTheme: dark,
+            elements: {
+              organizationSwitcherTrigger: "",
+            },
+          }}
+        />
+      <div className='flex flex-1 flex-col mt-16 justify-start'>
+        <h3 className='text-heading4-medium  text-light-1'>
           Comunidades Sugeridas
         </h3>
 
@@ -45,7 +54,7 @@ async function RightSidebar() {
         </div>
       </div>
 
-      <div className='flex flex-1 flex-col justify-start'>
+      <div className='flex flex-1 flex-col mt-7 justify-start'>
         <h3 className='text-heading4-medium text-light-1'>Mentes Similares</h3>
         <div className='mt-7 flex w-[350px] flex-col gap-10'>
           {similarMinds.users.length > 0 ? (

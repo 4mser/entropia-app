@@ -161,11 +161,11 @@ function ThreadCard({
             {community && ` - ${community.name}`}
           </p>
 
-          <div className="rounded-full w-3 border border-green-700 p-px h-3 overflow-hidden">
+          <div className="rounded-md w-5 h-5 overflow-hidden">
           <img
             src={community.image}
             alt={community.name}
-            className=' w-full h-full rounded-full   object-cover'
+            className=' w-full h-full   object-cover'
           />
           </div>
         </Link>

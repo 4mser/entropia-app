@@ -18,7 +18,7 @@ async function Page({ params }: { params: { id: string } }) {
   if (!userInfo?.onboarded) redirect("/onboarding");
 
   return (
-    <section>
+    <section className="pb-1">
       <ProfileHeader
         accountId={userInfo.id}
         authUserId={user.id}
@@ -28,25 +28,26 @@ async function Page({ params }: { params: { id: string } }) {
         bio={userInfo.bio}
       />
 
-      <div>
-        <Tabs defaultValue='threads' className='w-full'>
+        <Tabs defaultValue='threads' className='w-full px-4'>
           <TabsList className='tab'>
             {profileTabs.map((tab) => (
               <TabsTrigger key={tab.label} value={tab.value} className='tab'>
-                <Image
-                  src={tab.icon}
-                  alt={tab.label}
-                  width={24}
-                  height={24}
-                  className='object-contain'
-                />
-                <p className='max-sm:hidden'>{tab.label}</p>
+                <div className="w-full h-full bg-dark-2/80 transition hover:bg-dark-2/90 rounded-full flex items-center justify-center">
+                  <div className="h-8 w-auto p-1.5">
+                    <img
+                      src={tab.icon}
+                      alt={tab.label}
+                      className='w-full h-full object-contain opacity-80'
+                    />
+                  </div>
 
-                {tab.label === "Threads" && (
-                  <p className='ml-1 rounded-sm bg-light-4 px-2 py-1 !text-tiny-medium text-light-2'>
-                    {userInfo.threads.length}
-                  </p>
-                )}
+                  {tab.label === "Posts" && (
+                    <p className=' rounded-sm  py-1 !text-subtle-medium text-light-2/80'>
+                      {userInfo.threads.length}
+                    </p>
+                  )}
+                  <p className='max-sm:hidden !text-subtle-medium text-light-2/80 ml-1'>{tab.label}</p>
+                </div>
               </TabsTrigger>
             ))}
           </TabsList>
@@ -65,7 +66,6 @@ async function Page({ params }: { params: { id: string } }) {
             </TabsContent>
           ))}
         </Tabs>
-      </div>
     </section>
   );
 }
