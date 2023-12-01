@@ -1,14 +1,11 @@
 import { OrganizationSwitcher, SignedIn, SignOutButton } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import Link from "next/link";
+import ButtonActivity from "../ui/button-activity";
 
 function Topbar() {
 
-  const actividad = {
-      imgURL: "/assets/heart.svg",
-      route: "/activity",
-      label: "Actividad",
-    }
+  
   
 
   return (
@@ -18,9 +15,7 @@ function Topbar() {
       </Link>
 
       <div className='flex items-center gap-1'>
-        <Link href={actividad.route} className="opacity-70 hover:opacity-100 mr-2">
-          <img src={actividad.imgURL} alt="" />
-        </Link>
+        <ButtonActivity />
         <div className='block md:hidden'>
           <SignedIn>
             <SignOutButton>
