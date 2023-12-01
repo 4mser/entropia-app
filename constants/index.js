@@ -20,6 +20,11 @@ export const sidebarLinks = [
     label: "Crear Post",
   },
   {
+    imgURL: "/assets/atom-linear.svg",
+    route: "/research-lab",
+    label: "Research Lab",
+  },
+  {
     imgURL: "/assets/community.svg",
     route: "/communities",
     label: "Comunidades",
@@ -42,10 +47,15 @@ export const bottombarLinks = [
     route: "/search",
     label: "Buscar",
   },
-  {
+  /* {
     imgURL: "/assets/heart.svg",
     route: "/activity",
     label: "Actividad",
+  }, */
+  {
+    imgURL: "/assets/atom-linear.svg",
+    route: "/research-lab",
+    label: "Research Lab",
   },
   {
     imgURL: "/assets/community.svg",

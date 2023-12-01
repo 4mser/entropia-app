@@ -15,7 +15,6 @@ async function CreatePost() {
   return (
     <section className="p-5">
       <h1 className='text-heading2-semibold text-white'>Crear Post</h1>
-
       <PostThread userId={userInfo._id} />
     </ section>
   );

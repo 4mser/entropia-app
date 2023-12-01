@@ -40,6 +40,8 @@ function ThreadCard({
   isComment,
 }: Props) {
 
+  const createdDate = new Date(createdAt);
+
   return (
     <article
       className={`flex w-full flex-col px-4 py-7   border-b border-white/10 ${
@@ -105,7 +107,8 @@ function ThreadCard({
               
             </div>
             <p className={`${!community && comments.length === 0 ? 'pt-5 bg-dark-1 text-subtle-medium text-gray-1  -translate-x-14 ' : 'hidden'}`}>
-                {formatDateString(createdAt)}
+                {/* {formatDateString(createdAt)} */}
+                {createdDate.toLocaleString()}
               </p>
           </div>
         </div>
@@ -146,7 +149,9 @@ function ThreadCard({
           
         </div>
         <p className={`${!community ? 'mt-5 text-subtle-medium text-gray-1' : 'hidden'}`}>
-          {formatDateString(createdAt)}
+          {/* {formatDateString(createdAt)} */}
+          {createdDate.toLocaleString()}
+
         </p>
         </section>
       )}
@@ -157,8 +162,11 @@ function ThreadCard({
           className='mt-5 flex items-center gap-2'
         >
           <p className='text-subtle-medium text-gray-1'>
-            {formatDateString(createdAt)}
+            {/* {formatDateString(createdAt)} */}
+          {createdDate.toLocaleString()}
+
             {community && ` - ${community.name}`}
+
           </p>
 
           <div className="rounded-md w-5 h-5 overflow-hidden">

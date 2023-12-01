@@ -3,6 +3,14 @@ import { dark } from "@clerk/themes";
 import Link from "next/link";
 
 function Topbar() {
+
+  const actividad = {
+      imgURL: "/assets/heart.svg",
+      route: "/activity",
+      label: "Actividad",
+    }
+  
+
   return (
     <nav className='topbar md:hidden' >
       <Link href='/' className='flex items-center gap-4'>
@@ -10,6 +18,9 @@ function Topbar() {
       </Link>
 
       <div className='flex items-center gap-1'>
+        <Link href={actividad.route} className="opacity-70 hover:opacity-100 mr-2">
+          <img src={actividad.imgURL} alt="" />
+        </Link>
         <div className='block md:hidden'>
           <SignedIn>
             <SignOutButton>

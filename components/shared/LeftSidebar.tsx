@@ -14,7 +14,7 @@ const LeftSidebar = () => {
 
   return (
     <section className='custom-scrollbar leftsidebar'>
-      <Link href='/' className='flex absolute top-6  items-center gap-4 mb-5 px-7'>
+      <Link href='/' className='flex absolute top-6  items-center gap-4 mb-5 px-7 hover:scale-105 transition-all'>
           <img src='/entropia.svg' alt='logo' width={110} height={110} />
         </Link>
       <div className='flex w-full flex-1 flex-col gap-7 px-6 mt-12'>
@@ -51,7 +51,7 @@ const LeftSidebar = () => {
       <div className='mt-10 px-6'>
         <SignedIn>
           <SignOutButton signOutCallback={() => router.push("/sign-in")}>
-            <div className='flex cursor-pointer gap-4 p-4'>
+            <div className='flex cursor-pointer gap-4 p-4 opacity-80 hover:opacity-100 hover:scale-110 transition-all'>
               <img
                 src='/assets/logout.svg'
                 alt='logout'

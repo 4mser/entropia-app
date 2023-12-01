@@ -10,6 +10,8 @@ import Bottombar from "@/components/shared/Bottombar";
 import RightSidebar from "@/components/shared/RightSidebar";
 import Topbar from "@/components/shared/Topbar";
 import ButtonLandpage from "@/components/ui/button-landpage";
+import CreatePost from "@/components/shared/CreatePost";
+import PostearPc from "@/components/shared/PostearPc";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -43,8 +45,8 @@ export default function RootLayout({
             <LeftSidebar />
             <section className='main-container'>
               <div className='w-full max-w-4xl'>
-                
                 <ButtonLandpage />
+                {/* <PostearPc /> */}
                 {children}
               </div>
             </section>
