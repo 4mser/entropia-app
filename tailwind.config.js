@@ -16,6 +16,12 @@ module.exports = {
       },
     },
     fontSize: {
+      "custom-body": [
+          "12px",
+          {
+            fontWeight: "400"
+          }
+      ],
       "heading1-bold": [
         "36px",
         {
