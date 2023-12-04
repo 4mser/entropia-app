@@ -45,7 +45,6 @@ export default function RootLayout({
             <LeftSidebar />
             <section className='main-container'>
               <div className='w-full max-w-4xl'>
-                <ButtonLandpage />
                 {/* <PostearPc /> */}
                 {children}
               </div>

@@ -9,6 +9,7 @@ import { fetchUser } from "@/lib/actions/user.actions";
 import PostThreadButton from "@/components/ui/post-thread-button";
 import CreatePost from "@/components/shared/CreatePost";
 import Topbar from "@/components/shared/Topbar";
+import ButtonLandpage from "@/components/ui/button-landpage";
 
 async function Home({
   searchParams,
@@ -35,6 +36,7 @@ async function Home({
         ) : (
           <>
             <Topbar />
+            <ButtonLandpage />
             {result.posts.map((post) => (
               <ThreadCard
                 key={post._id}
