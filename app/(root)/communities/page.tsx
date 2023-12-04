@@ -26,39 +26,39 @@ async function Page({
   });
 
   return (
-    <>
-      <h1 className='text-heading2-semibold text-light-2 p-5'>Comunidades</h1>
+      <section className="pb-16">
+        <h1 className='text-heading2-semibold text-light-2 p-5'>Comunidades</h1>
 
-      <div className='px-5'>
-        <Searchbar routeType='communities' />
-      </div>
+        <div className='px-5'>
+          <Searchbar routeType='communities' />
+        </div>
 
-      <section className='mt-9 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-4 px-5'>
-        {result.communities.length === 0 ? (
-          <p className='no-result'>Sin resultados</p>
-        ) : (
-          <>
-            {result.communities.map((community) => (
-              <CommunityCard
-                key={community.id}
-                id={community.id}
-                name={community.name}
-                username={community.username}
-                imgUrl={community.image}
-                bio={community.bio}
-                members={community.members}
-              />
-            ))}
-          </>
-        )}
+        <section className='mt-9 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-4 px-5'>
+          {result.communities.length === 0 ? (
+            <p className='no-result'>Sin resultados</p>
+          ) : (
+            <>
+              {result.communities.map((community) => (
+                <CommunityCard
+                  key={community.id}
+                  id={community.id}
+                  name={community.name}
+                  username={community.username}
+                  imgUrl={community.image}
+                  bio={community.bio}
+                  members={community.members}
+                />
+              ))}
+            </>
+          )}
+        </section>
+
+        <Pagination
+          path='communities'
+          pageNumber={searchParams?.page ? +searchParams.page : 1}
+          isNext={result.isNext}
+        />
       </section>
-
-      <Pagination
-        path='communities'
-        pageNumber={searchParams?.page ? +searchParams.page : 1}
-        isNext={result.isNext}
-      />
-    </>
   );
 }
 
