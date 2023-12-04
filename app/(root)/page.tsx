@@ -8,6 +8,7 @@ import { fetchPosts } from "@/lib/actions/thread.actions";
 import { fetchUser } from "@/lib/actions/user.actions";
 import PostThreadButton from "@/components/ui/post-thread-button";
 import CreatePost from "@/components/shared/CreatePost";
+import Topbar from "@/components/shared/Topbar";
 
 async function Home({
   searchParams,
@@ -33,6 +34,7 @@ async function Home({
           <p className='no-result'>No se encontraron posts</p>
         ) : (
           <>
+            <Topbar />
             {result.posts.map((post) => (
               <ThreadCard
                 key={post._id}

@@ -39,7 +39,7 @@ export default function RootLayout({
           <meta property="og:image" content="https://app-valdi.s3.amazonaws.com/instagram-12.png" />
         </head>
         <body className={`${inter.className} xl:px-[8%] 2xl:px-[15%]` }>
-          <Topbar />
+          {/* <Topbar /> */}
 
           <main className='flex flex-row'>
             <LeftSidebar />
