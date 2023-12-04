@@ -14,7 +14,7 @@ function Topbar() {
         <img src='/entropia.svg' alt='logo' width={110} height={110} />
       </Link>
 
-      <div className='flex items-center gap-1'>
+      <div className='flex items-center'>
         <ButtonActivity />
         {/* <div className='block md:hidden'>
           <SignedIn>

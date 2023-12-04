@@ -14,7 +14,7 @@ const ButtonActivity = () => {
       }
 
   return (
-    <Link href={actividad.route} className="h-full opacity-70 hover:opacity-100 mr-2">
+    <Link href={actividad.route} className="h-full opacity-70 hover:opacity-100">
         <img src={`${pathname === '/activity' ? '/assets/heart-filled.svg' : '/assets/heart.svg'}`} alt="" className={`h-full object-contain ${pathname === '/activity' && 'scale-125'}`} />
     </Link>
   )
