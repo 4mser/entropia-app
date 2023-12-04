@@ -35,11 +35,11 @@ const ProfilePic: React.FC<ProfilePicProps> = ({ imgUrl }) => {
           className='fixed top-0 left-0 inset-0 bg-black/50  backdrop-blur-md z-50 flex items-center justify-center p-20'
           onClick={closeModal}
         >
-          <div className='h-fit bg-gradient-to-tr from-blue to-green-700 p-1 relative overflow-hidden rounded-md '>
+          <div className='max-h-[70vh] bg-gradient-to-tr from-blue to-green-700 p-1 relative overflow-hidden rounded-md '>
             <img
               src={imgUrl}
               alt='modal'
-              className='h-full md:max-h-[70vh] rounded-md object-contain cursor-pointer'
+              className='h-full w-full rounded-md object-contain cursor-pointer'
               onClick={(e) => e.stopPropagation()}
             />
           </div>
