@@ -35,7 +35,7 @@ const ProfilePic: React.FC<ProfilePicProps> = ({ imgUrl }) => {
           className='fixed top-0 left-0 inset-0 bg-black/50  backdrop-blur-md z-50 flex items-center justify-center p-20'
           onClick={closeModal}
         >
-          <div className='max-h-[70vh]  relative overflow-hidden rounded-md '>
+          <div className='max-h-[80vh]  relative overflow-hidden rounded-md '>
             <img
               src={imgUrl}
               alt='modal'
