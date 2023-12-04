@@ -50,7 +50,7 @@ const LeftSidebar = () => {
 
   return (
     <section className='custom-scrollbar leftsidebar'>
-      <Link href='/' className='flex absolute top-6  items-center gap-4 mb-5 px-7 hover:scale-105 transition-all'>
+      <Link href='/' className='flex absolute top-6 md:scale-150 md:hover:scale-[1.6] lg:transform-none  items-center gap-4 mb-5 px-7 hover:scale-105 lg:hover:scale-105  transition-all'>
           <img src={determineLogo()} alt='logo' width={110} height={110} />
         </Link>
       <div className='flex w-full flex-1 flex-col gap-7 px-6 mt-12'>

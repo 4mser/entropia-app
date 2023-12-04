@@ -1,5 +1,6 @@
 import { SignOutButton, SignedIn } from "@clerk/nextjs";
 import Link from "next/link";
+import ProfilePic from "../ui/profile-pic";
 
 interface Props {
   accountId: string;
@@ -24,13 +25,8 @@ function ProfileHeader({
     <div className='flex w-full flex-col justify-start p-5'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-3'>
-          <div className='relative overflow-hidden rounded-full h-20 w-20'>
-            <img
-              src={imgUrl}
-              alt='logo'
-              className='w-full h-full object-cover shadow-2xl'
-            />
-          </div>
+          
+          <ProfilePic imgUrl={imgUrl} />
 
           <div className='flex-1'>
             <h2 className='text-left text-heading3-bold text-light-1'>
