@@ -16,7 +16,7 @@ function Topbar() {
 
       <div className='flex items-center gap-1'>
         <ButtonActivity />
-        <div className='block md:hidden'>
+        {/* <div className='block md:hidden'>
           <SignedIn>
             <SignOutButton>
               <div className='flex cursor-pointer opacity-80 hover:opacity-100'>
@@ -29,7 +29,7 @@ function Topbar() {
               </div>
             </SignOutButton>
           </SignedIn>
-        </div>
+        </div> */}
 
         <OrganizationSwitcher
           appearance={{

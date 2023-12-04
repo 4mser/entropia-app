@@ -1,3 +1,4 @@
+import { SignOutButton, SignedIn } from "@clerk/nextjs";
 import Link from "next/link";
 
 interface Props {
@@ -35,21 +36,38 @@ function ProfileHeader({
             <h2 className='text-left text-heading3-bold text-light-1'>
               {name}
             </h2>
+            
             <p className='text-base-medium text-gray-1'>@{username}</p>
           </div>
+          
         </div>
         {accountId === authUserId && type !== "Community" && (
-          <Link href='/profile/edit'>
-            <div className='flex cursor-pointer gap-3 rounded-lg bg-dark-3 px-4 py-2'>
+          <div className="flex flex-col items-center gap-2">
+            <Link href='/profile/edit' className="opacity-70 hover:opacity-100">
               <img
                 src='/assets/pen.svg'
                 alt='logout'
-                width={20}
-                height={20}
+                width={24}
+                height={24}
               />
+            </Link>
 
-            </div>
-          </Link>
+            <div className='block md:hidden'>
+              <SignedIn>
+                <SignOutButton>
+                  <div className='flex cursor-pointer opacity-80 hover:opacity-100'>
+                    <img
+                      src='/assets/logout.svg'
+                      alt='logout'
+                      width={24}
+                      height={24}
+                    />
+                  </div>
+                </SignOutButton>
+              </SignedIn>
+            </div> 
+          
+          </div>
         )}
       </div>
 
