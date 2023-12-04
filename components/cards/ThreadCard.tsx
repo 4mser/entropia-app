@@ -114,22 +114,24 @@ function ThreadCard({
               </p>
           </div>
         </div>
-        <EditThread 
-          threadId={JSON.stringify(id)}
-          currentUserId={currentUserId}
-          authorId={author.id}
-          parentId={parentId}
-          isComment={isComment}
-          initialText={content}
-        />
+        <div className="flex items-center gap-3">
+          <EditThread 
+            threadId={JSON.stringify(id)}
+            currentUserId={currentUserId}
+            authorId={author.id}
+            parentId={parentId}
+            isComment={isComment}
+            initialText={content}
+          />
 
-        <DeleteThread
-          threadId={JSON.stringify(id)}
-          currentUserId={currentUserId}
-          authorId={author.id}
-          parentId={parentId}
-          isComment={isComment}
-        />
+          <DeleteThread
+            threadId={JSON.stringify(id)}
+            currentUserId={currentUserId}
+            authorId={author.id}
+            parentId={parentId}
+            isComment={isComment}
+          />
+        </div>
       </div>
 
       {!isComment && comments.length > 0 && (
