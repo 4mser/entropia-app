@@ -16,20 +16,6 @@ function Topbar() {
 
       <div className='flex items-center'>
         <ButtonActivity />
-        {/* <div className='block md:hidden'>
-          <SignedIn>
-            <SignOutButton>
-              <div className='flex cursor-pointer opacity-80 hover:opacity-100'>
-                <img
-                  src='/assets/logout.svg'
-                  alt='logout'
-                  width={24}
-                  height={24}
-                />
-              </div>
-            </SignOutButton>
-          </SignedIn>
-        </div> */}
 
         <OrganizationSwitcher
           appearance={{
