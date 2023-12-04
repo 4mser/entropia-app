@@ -58,13 +58,16 @@ function EditThread({
                 <textarea
                   value={newText}
                   onChange={(e) => setNewText(e.target.value)}
+                  className="bg-dark-2 rounded-md p-2 text-white"
                 />
-                <button onClick={handleEdit} className="text-white">
+                <div className="flex flex-col gap-2 mt-3">
+                <button onClick={handleEdit} className="text-white rounded-lg bg-gradient-to-tr from-blue to-green-700 py-1">
                   Guardar
                 </button>
-                <button onClick={closeModal} className="text-white">
+                <button onClick={closeModal} className="text-white rounded-lg border border-white/10 py-1">
                   Cancelar
                 </button>
+                </div>
               </div>
             </div>
           ) : (
