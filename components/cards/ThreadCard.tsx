@@ -115,13 +115,13 @@ function ThreadCard({
           </div>
         </div>
         <EditThread 
-            threadId={JSON.stringify(id)}
-            currentUserId={currentUserId}
-            authorId={author.id}
-            parentId={parentId}
-            isComment={isComment}
-            initialText={content}
-          />
+          threadId={JSON.stringify(id)}
+          currentUserId={currentUserId}
+          authorId={author.id}
+          parentId={parentId}
+          isComment={isComment}
+          initialText={content}
+        />
 
         <DeleteThread
           threadId={JSON.stringify(id)}
