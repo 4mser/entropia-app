@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { SignOutButton, SignedIn, useAuth } from "@clerk/nextjs";
 
 import { sidebarLinks } from "@/constants";
+import { useEffect, useState } from "react";
 
 const LeftSidebar = () => {
   const router = useRouter();
@@ -12,10 +13,45 @@ const LeftSidebar = () => {
 
   const { userId } = useAuth();
 
+  const logos = {
+    entropia: "/entropia.svg",
+    eoa: "/eoa.svg"
+  }
+
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    // Agregar el evento de cambio de tamaño de la ventana
+    window.addEventListener('resize', handleResize);
+
+    // Llamar a handleResize una vez para establecer el ancho inicial
+    handleResize();
+
+    // Limpiar el evento al desmontar el componente
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const determineLogo = () => {
+    if (screenWidth <= 480) {
+      // Tamaño 'md' o menor
+      return logos.entropia;
+    } else if (screenWidth > 768 && screenWidth <= 1024) {
+      return logos.eoa;
+    } else {
+      return logos.entropia;
+    }
+  };
+
   return (
     <section className='custom-scrollbar leftsidebar'>
       <Link href='/' className='flex absolute top-6  items-center gap-4 mb-5 px-7 hover:scale-105 transition-all'>
-          <img src='/entropia.svg' alt='logo' width={110} height={110} />
+          <img src={determineLogo()} alt='logo' width={110} height={110} />
         </Link>
       <div className='flex w-full flex-1 flex-col gap-7 px-6 mt-12'>
       
