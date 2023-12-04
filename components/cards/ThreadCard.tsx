@@ -3,6 +3,7 @@ import Link from "next/link";
 import { formatDateString } from "@/lib/utils";
 import DeleteThread from "../forms/DeleteThread";
 import Comentar from "../ui/comentar";
+import EditThread from "../forms/EditThread";
 
 interface Props {
   id: string;
@@ -41,6 +42,7 @@ function ThreadCard({
 }: Props) {
 
   const createdDate = new Date(createdAt);
+  
 
   return (
     <article
@@ -112,6 +114,14 @@ function ThreadCard({
               </p>
           </div>
         </div>
+        <EditThread 
+            threadId={JSON.stringify(id)}
+            currentUserId={currentUserId}
+            authorId={author.id}
+            parentId={parentId}
+            isComment={isComment}
+            initialText={content}
+          />
 
         <DeleteThread
           threadId={JSON.stringify(id)}

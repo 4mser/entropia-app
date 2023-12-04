@@ -238,3 +238,28 @@ export async function addCommentToThread(
     throw new Error("Unable to add comment");
   }
 }
+
+// Función para editar posts
+
+export async function editThread(id: string, newText: string, path: string): Promise<void> {
+  try {
+    connectToDB();
+
+    // Find the thread to be edited (the main thread)
+    const mainThread = await Thread.findById(id);
+
+    if (!mainThread) {
+      throw new Error("Thread not found");
+    }
+
+    // Update the text of the main thread
+    mainThread.text = newText;
+    await mainThread.save();
+
+    revalidatePath(path);
+  } catch (error: any) {
+    const errorMessage = error && error.message ? error.message : "An unknown error occurred";
+    throw new Error(`Failed to edit thread: ${errorMessage}`);
+  }
+}
+
