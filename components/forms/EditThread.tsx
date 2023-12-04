@@ -69,11 +69,11 @@ function EditThread({
             </div>
           ) : (
             <img
-              src="/assets/edit.svg"
+              src="/assets/editarpost.svg"
               alt="edit"
               width={18}
               height={18}
-              className="cursor-pointer object-contain"
+              className="cursor-pointer object-contain opacity-70 hover:opacity-100"
               onClick={openModal}
             />
           )}

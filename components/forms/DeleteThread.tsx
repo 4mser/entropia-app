@@ -45,11 +45,11 @@ function DeleteThread({
       {loading ? (<Loader />
       ): (
         <img
-        src="/assets/delete.svg"
+        src="/assets/borrarpost.svg"
         alt="delete"
         width={18}
         height={18}
-        className="cursor-pointer object-contain"
+        className="cursor-pointer object-contain opacity-70 hover:opacity-100"
         onClick={handleDelete}
       />
       )}
