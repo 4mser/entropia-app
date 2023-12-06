@@ -9,7 +9,7 @@ body {
 @layer components {
   /* main */
   .main-container {
-    @apply flex min-h-screen flex-1 flex-col items-center bg-dark-1  pb-10  sm:px-0 md:pb-0 md:pt-0;
+    @apply flex max-w-full overflow-hidden flex-1 flex-col items-center bg-dark-1  pb-10  sm:px-0 md:pb-0 md:pt-0;
   }
 
   /* Head Text */

@@ -1,31 +1,47 @@
 'use client'
 
-function Projects() {
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
-    const projects = [
-        {
-            name: "Cultibox",
-            image: "/images/banner.png"
-        },
-        {
-            name: "Deep Eye",
-            image: "/images/img-eye.jpg"
-        },
-        {
-            name: "M.A.P.S",
-            image: "/images/OIP.jpeg"
-        }
-    ]
+function Projects() {
+  const projects = [
+    {
+      name: 'Cultibox',
+      image: '/images/banner.png',
+    },
+    {
+      name: 'Deep Eye',
+      image: '/images/img-eye.jpg',
+    },
+    {
+      name: 'M.A.P.S',
+      image: '/images/OIP.jpeg',
+    },
+    {
+      name: 'Deep Eye',
+      image: '/images/img-eye.jpg',
+    },
+    {
+      name: 'M.A.P.S',
+      image: '/images/OIP.jpeg',
+    },
+  ];
+
   return (
-        <section className='w-full  px-3 grid grid-cols-3 gap-3'>
-            {projects.map((project, index) => (
-                <div key={index} className="relative h-16 flex justify-center items-center  overflow-hidden  rounded-xl hover:scale-105 transition-all">
-                    <img src={project.image} alt={project.name} className="w-full h-full  object-cover " />
-                    <p className="absolute bottom-0 w-full px-2 py-1 bg-gradient-to-t from-dark-1/80 text-subtle-medium to-transparent">{project.name}</p>
-                </div>
-            ))}
-        </section>
-  )
+    <section className=' overflow-hidden'>
+      <Swiper slidesPerView={1.8} spaceBetween={10} className='mySwiper'>
+        {projects.map((project, index) => (
+          <SwiperSlide key={index} className='overflow-hidden'>
+            <div className={`border border-white/10 rounded-md  shadow-md overflow-hidden ${index === 0 ? 'ml-3' : ''}`}>
+              <img src={project.image} alt={project.name} className='w-full h-20 object-cover' />
+              <p className='text-[12px] p-1 text-white'>{project.name}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
+  );
 }
 
-export default Projects
+export default Projects;
