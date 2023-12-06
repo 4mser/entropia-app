@@ -31,8 +31,8 @@ function Searchbar({ routeType }: Props) {
       <img
         src='/assets/lupa.svg'
         alt='search'
-        width={24}
-        height={24}
+        width={21}
+        height={21}
         className='object-contain opacity-60'
       />
       <Input
