@@ -34,7 +34,7 @@ async function Page({ params }: { params: { id: string } }) {
           <TabsList className='tab'>
             {profileTabs.map((tab) => (
               <TabsTrigger key={tab.label} value={tab.value} className='tab'>
-                <div className="w-full h-full bg-dark-2/80 transition hover:bg-dark-2/90 rounded-full flex items-center justify-center">
+                <div className="w-full h-full bg-dark-4/80 transition hover:bg-dark-2/90 rounded-full flex items-center justify-center">
                   <div className="h-8 w-auto p-1.5">
                     <img
                       src={tab.icon}

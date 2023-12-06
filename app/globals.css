@@ -55,7 +55,7 @@ body {
   }
 
   .searchbar {
-    @apply flex gap-1 rounded-xl bg-dark-2 border border-white/10 px-4 ;
+    @apply flex gap-1 rounded-xl bg-dark-4 border border-white/10 px-4 ;
   }
 
   .searchbar_input {
@@ -135,7 +135,7 @@ body {
 
 /* Tab */
 .tab {
-  @apply  p-px w-full h-fit bg-dark-2 text-light-2 data-[state=active]:bg-gradient-to-tr from-blue to-green-700 rounded-full data-[state=active]:text-light-2 !important;
+  @apply  p-px w-full h-fit bg-dark-4 text-light-2 data-[state=active]:bg-gradient-to-tr from-blue to-green-700 rounded-full data-[state=active]:text-light-2 !important;
 }
 
 .no-focus {
