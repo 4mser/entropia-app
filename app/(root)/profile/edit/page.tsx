@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 
 import { fetchUser } from "@/lib/actions/user.actions";
 import AccountProfile from "@/components/forms/AccountProfile";
+import BackButton from "@/components/ui/back-button";
 
 // Copy paste most of the code as it is from the /onboarding
 
@@ -24,8 +25,10 @@ async function Page() {
 
   return (
     <section className="p-5">
-      <h1 className='head-text'>Editar perfil</h1>
-      <p className='mt-1 text-base-regular text-light-2/80'>Haz cualquier cambio</p>
+      <div className="flex items-center -translate-x-3">
+        <BackButton />
+        <h1 className='text-heading3-bold text-white'> Editar perfil</h1>
+      </div>
 
       <section className='mt-5'>
         <AccountProfile user={userData} btnTitle='Continuar' />
