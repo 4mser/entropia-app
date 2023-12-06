@@ -55,7 +55,7 @@ body {
   }
 
   .searchbar {
-    @apply flex gap-1 rounded-full border border-white/10 px-4 py-2;
+    @apply flex gap-1 rounded-xl bg-dark-2 border border-white/10 px-4 ;
   }
 
   .searchbar_input {

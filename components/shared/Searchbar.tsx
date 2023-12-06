@@ -21,7 +21,7 @@ function Searchbar({ routeType }: Props) {
       } else {
         router.push(`/${routeType}`);
       }
-    }, 0);
+    }, 200);
 
     return () => clearTimeout(delayDebounceFn);
   }, [search, routeType]);
