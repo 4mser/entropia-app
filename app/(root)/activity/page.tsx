@@ -21,7 +21,7 @@ async function Page() {
       <section className=' flex flex-col'>
         {activity.length > 0 ? (
           <>
-            {activity.map((activity) => (
+            {activity.reverse().map((activity) => (
               <Link key={activity._id} href={`/thread/${activity.parentId}`}>
                 <article className='flex items-center w-full p-5 border-b  border-white/10 gap-2'>
                   <div className="w-7 h-7 rounded-full overflow-hidden bg-gradient-to-tr from-blue to-green-700 p-px">
