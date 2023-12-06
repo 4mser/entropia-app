@@ -41,10 +41,10 @@ export default function RootLayout({
         <body className={`${inter.className} xl:px-[8%] 2xl:px-[15%]` }>
           {/* <Topbar /> */}
 
-          <main className='flex flex-row'>
+          <main className='flex flex-row'> 
             <LeftSidebar />
             <section className='main-container'>
-              <div className='w-full max-w-4xl'>
+              <div className='w-full max-w-4xl relative'>
                 {/* <PostearPc /> */}
                 {children}
               </div>
