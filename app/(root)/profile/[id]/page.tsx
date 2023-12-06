@@ -9,6 +9,7 @@ import ProfileHeader from "@/components/shared/ProfileHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { fetchUser } from "@/lib/actions/user.actions";
+import BackButton from "@/components/ui/back-button";
 
 async function Page({ params }: { params: { id: string } }) {
   const user = await currentUser();
@@ -19,6 +20,7 @@ async function Page({ params }: { params: { id: string } }) {
 
   return (
     <section className="pb-1">
+      {user.id !== params.id && <BackButton />}
       <ProfileHeader
         accountId={userInfo.id}
         authUserId={user.id}

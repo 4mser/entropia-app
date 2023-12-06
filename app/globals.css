@@ -157,7 +157,7 @@ body {
 
 /* Comment Form */
 .comment-form {
-  @apply  flex items-center gap-4 border-y border-y-dark-4 px-5 py-5 max-xs:flex-col !important;
+  @apply  flex items-center gap-4 border-b border-y-dark-4 px-5 py-5 max-xs:flex-col !important;
 }
 
 .comment-form_btn {

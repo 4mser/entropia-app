@@ -7,6 +7,7 @@ import ThreadCard from "@/components/cards/ThreadCard";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { fetchThreadById } from "@/lib/actions/thread.actions";
 import ThreadCommentCard from "@/components/cards/ThreadCommentCard";
+import BackButton from "@/components/ui/back-button";
 
 export const revalidate = 0;
 
@@ -23,6 +24,7 @@ async function page({ params }: { params: { id: string } }) {
 
   return (
     <section className='relative'>
+      <BackButton />
       <div>
         <ThreadCard
           id={thread._id}
@@ -36,7 +38,7 @@ async function page({ params }: { params: { id: string } }) {
         />
       </div>
 
-      <div className='mt-7'>
+      <div className=''>
         <Comment
           threadId={params.id}
           currentUserImg={user.imageUrl}
