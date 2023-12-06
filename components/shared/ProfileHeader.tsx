@@ -40,7 +40,9 @@ function ProfileHeader({
               <p className='text-small-medium text-gray-1'>@{username}</p>
             </div>
 
-            <Link href="/profile/edit" className="text-white text-[12px] bg-dark-4 h-fit  px-4 py-1 rounded-md ">Editar perfil</Link>
+            {accountId === authUserId && type !== "Community" && (
+              <Link href="/profile/edit" className="text-white text-[12px] bg-dark-4 h-fit  px-4 py-1 rounded-md border border-white/0 hover:border-white/20 transition-all ">Editar perfil</Link>
+            )}
           </div>
           
         </div>
