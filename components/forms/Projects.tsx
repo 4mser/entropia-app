@@ -34,7 +34,7 @@ function Projects() {
         {projects.map((project, index) => (
           <SwiperSlide key={index} className='overflow-hidden'>
             <div className={`border border-white/10 rounded-md  shadow-md overflow-hidden ${index === 0 ? 'ml-3' : ''}`}>
-              <img src={project.image} alt={project.name} className='w-full h-20 object-cover' />
+              <img src={project.image} alt={project.name} className='w-full h-20 object-cover border-b border-white/10 ' />
               <p className='text-[12px] p-1 text-white'>{project.name}</p>
             </div>
           </SwiperSlide>
