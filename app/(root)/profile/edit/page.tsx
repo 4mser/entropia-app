@@ -23,14 +23,14 @@ async function Page() {
   };
 
   return (
-    <>
+    <section className="p-5">
       <h1 className='head-text'>Editar perfil</h1>
-      <p className='mt-3 text-base-regular text-light-2'>Haz cualquier cambio</p>
+      <p className='mt-1 text-base-regular text-light-2/80'>Haz cualquier cambio</p>
 
-      <section className='mt-12'>
-        <AccountProfile user={userData} btnTitle='Continue' />
+      <section className='mt-5'>
+        <AccountProfile user={userData} btnTitle='Continuar' />
       </section>
-    </>
+    </section>
   );
 }
 
