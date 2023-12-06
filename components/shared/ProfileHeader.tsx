@@ -23,21 +23,24 @@ function ProfileHeader({
 }: Props) {
   return (
     <div className='flex w-full flex-col justify-start p-5'>
+      <div className="absolute top-0 left-0 h-28 overflow-hidden w-full flex justify-center items-center">
+            <img src="https://p4.wallpaperbetter.com/wallpaper/385/323/754/space-james-webb-space-telescope-hd-wallpaper-preview.jpg" alt="" className="w-full h-full object-cover" />
+          </div>
       <div className='flex items-center justify-between'>
-        <div className='flex items-center gap-3'>
+        <div className='flex flex-col items-start gap-3 pt-12'>
           
           <ProfilePic imgUrl={imgUrl} />
 
           <div className='flex-1'>
-            <h2 className='text-left text-heading3-bold text-light-1'>
+            <h2 className='text-body-medium text-light-1'>
               {name}
             </h2>
             
-            <p className='text-base-medium text-gray-1'>@{username}</p>
+            <p className='text-small-medium text-gray-1'>@{username}</p>
           </div>
           
         </div>
-        {accountId === authUserId && type !== "Community" && (
+        {/* {accountId === authUserId && type !== "Community" && (
           <div className="flex flex-col items-center gap-2">
             <Link href='/profile/edit' className="opacity-70 hover:opacity-100">
               <img
@@ -64,12 +67,12 @@ function ProfileHeader({
             </div> 
           
           </div>
-        )}
+        )} */}
       </div>
 
       <p className='mt-6 max-w-lg text-base-regular text-light-2'>{bio}</p>
 
-      <div className='mt-10 w-full bg-dark-3' />
+      {/* <div className='mt-10 w-full bg-dark-3' /> */}
     </div>
   );
 }

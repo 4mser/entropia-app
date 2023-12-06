@@ -20,7 +20,7 @@ async function Page({ params }: { params: { id: string } }) {
 
   return (
     <section className="pb-1">
-      {user.id !== params.id && <BackButton />}
+      {/* {user.id !== params.id && <BackButton />} */}
       <ProfileHeader
         accountId={userInfo.id}
         authUserId={user.id}

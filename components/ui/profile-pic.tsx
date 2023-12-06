@@ -20,13 +20,13 @@ const ProfilePic: React.FC<ProfilePicProps> = ({ imgUrl }) => {
     <>
       <div
         id="profile-image"
-        className='relative overflow-hidden rounded-full h-20 w-20'
+        className='relative overflow-hidden rounded-full h-20 w-20 p-1 border border-white/40'
         onClick={openModal}
       >
         <img
           src={imgUrl}
           alt='logo'
-          className='w-full h-full object-cover shadow-2xl cursor-pointer'
+          className='w-full h-full object-cover rounded-full shadow-2xl cursor-pointer'
         />
       </div>
 
