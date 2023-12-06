@@ -32,14 +32,14 @@ const ProfilePic: React.FC<ProfilePicProps> = ({ imgUrl }) => {
 
       {isModalOpen && (
         <div
-          className='fixed top-0 left-0 inset-0 bg-black/50  backdrop-blur-md z-50 flex items-center justify-center p-20'
+          className='fixed top-0 left-0 inset-0 bg-black/50  backdrop-blur-md z-50 flex items-center justify-center cursor-pointer p-10'
           onClick={closeModal}
         >
-          <div className='max-h-[80vh]  relative overflow-hidden rounded-md '>
+          <div className='flex items-center justify-center   overflow-hidden rounded-md '>
             <img
               src={imgUrl}
               alt='modal'
-              className='h-full w-full object-contain cursor-pointer'
+              className='max-h-[90vh] md:max-h-[70vh] object-contain cursor-pointer'
               onClick={(e) => e.stopPropagation()}
             />
           </div>
