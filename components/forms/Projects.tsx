@@ -30,7 +30,7 @@ function Projects() {
 
   return (
     <section className=' overflow-hidden'>
-      <Swiper slidesPerView={1.8} spaceBetween={10} className='mySwiper'>
+      <Swiper slidesPerView={2.2} spaceBetween={10} className='mySwiper'>
         {projects.map((project, index) => (
           <SwiperSlide key={index} className='overflow-hidden'>
             <div className={`border border-white/10 rounded-md  shadow-md overflow-hidden ${index === 0 ? 'ml-3' : ''}`}>
