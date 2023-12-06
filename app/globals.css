@@ -148,7 +148,7 @@ body {
 }
 
 .account-form_image-input {
-  @apply cursor-pointer border-none bg-transparent outline-none file:text-cyan-500 !important;
+  @apply cursor-pointer border-none bg-transparent outline-none file:font-semibold file:text-cyan-500 !important;
 }
 
 .account-form_input {

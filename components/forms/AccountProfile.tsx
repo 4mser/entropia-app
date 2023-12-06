@@ -114,7 +114,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
           control={form.control}
           name='profile_photo'
           render={({ field }) => (
-            <FormItem className='flex items-center gap-4'>
+            <FormItem className='flex items-center '>
               <FormLabel className='account-form_image-label'>
                 {field.value ? (
                     <img
@@ -132,7 +132,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                   />
                 )}
               </FormLabel>
-              <FormControl className='flex-1 text-base-semibold text-gray-200'>
+              <FormControl className='flex-1 text-base-semibold text-dark-1'>
                 <Input
                   type='file'
                   accept='image/*'
