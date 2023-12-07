@@ -185,6 +185,7 @@ module.exports = {
         "logout-btn": "#FF5A5A",
         "navbar-menu": "rgba(16, 16, 18, 0.6)",
         "dark-1": "rgb(13, 13, 13)",
+        // "dark-1": "#0B0E11",
         "dark-2": "#121417",
         "dark-3": "#101012",
         "dark-4": "#1F1F22",
@@ -193,7 +194,9 @@ module.exports = {
         "light-3": "#7878A3",
         "light-4": "#5C5C7B",
         "gray-1": "#697C89",
-        glassmorphism: "rgba(12, 12, 12, 0.60)",
+        // glassmorphism: "rgba(11, 14, 17, 0.70)",
+        glassmorphism: "rgba(13, 13, 13, 0.70)",
+
       },
       boxShadow: {
         "count-badge": "0px 0px 6px 2px rgba(219, 188, 159, 0.30)",
