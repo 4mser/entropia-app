@@ -2,6 +2,7 @@ import { OrganizationSwitcher, SignedIn, SignOutButton } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import Link from "next/link";
 import ButtonActivity from "../ui/button-activity";
+import ButtonSearch from "../ui/button-search";
 
 function Topbar() {
 
@@ -15,7 +16,10 @@ function Topbar() {
       </Link>
 
       <div className='flex items-center'>
-        <ButtonActivity />
+        <div className="flex gap-4 items-center">
+          <ButtonSearch />
+          <ButtonActivity />
+        </div>
 
         <OrganizationSwitcher
           appearance={{

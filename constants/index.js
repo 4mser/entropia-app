@@ -43,9 +43,9 @@ export const bottombarLinks = [
     label: "Inicio",
   },
   {
-    imgURL: "/assets/search.svg",
-    route: "/search",
-    label: "Buscar",
+    imgURL: "/assets/map-linear.svg",
+    route: "/map",
+    label: "Mapa",
   },
   /* {
     imgURL: "/assets/heart.svg",
