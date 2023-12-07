@@ -38,7 +38,7 @@ export default function RootLayout({
             <img src="/entropia.svg" alt="logo" className="w-28" />
             <Link href="https://demoentropia.vercel.app/" target="_blank" className="bg-gradient-to-tr group from-blue to-green-700 h-9 rounded-full flex items-center justify-center p-px">
               <div className="bg-dark-1 rounded-full group-hover:bg-opacity-60 h-full w-full flex justify-center items-center text-center text-white px-3 gap-1">
-                Ver landpage <span className="group-hover:translate-x-1 transition">{'->'}</span>
+                Ver landpage (old) <span className="group-hover:translate-x-1 transition">{'->'}</span>
               </div>
             </Link>
           </header>
