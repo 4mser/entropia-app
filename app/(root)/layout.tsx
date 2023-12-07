@@ -37,6 +37,7 @@ export default function RootLayout({
       <html lang='en'>
         <head>
           <meta property="og:image" content="https://app-valdi.s3.amazonaws.com/instagram-12.png" />
+          <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
         </head>
         <body className={`${inter.className} xl:px-[8%] 2xl:px-[15%]` }>
           {/* <Topbar /> */}

@@ -1,6 +1,10 @@
+import Maps from "@/components/shared/Maps"
+
 function page() {
   return (
-    <div>page</div>
+    <section className="w-full h-full overflow-hidden">
+        <Maps />
+    </section>
   )
 }
 
