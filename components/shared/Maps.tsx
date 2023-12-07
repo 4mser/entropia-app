@@ -19,7 +19,7 @@ function Maps() {
         const mapboxMap = new mapboxgl.Map({
           container: node,
           accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "",
-          style: "mapbox://styles/mapbox/streets-v11",
+          style: "mapbox://styles/mapbox/standard",
           center: [longitude, latitude],
           zoom: 17,
         });
