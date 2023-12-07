@@ -19,7 +19,7 @@ function Maps() {
         const mapboxMap = new mapboxgl.Map({
           container: node,
           accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "",
-          style: "mapbox://styles/mapbox/standard",
+          style: "mapbox://styles/mapbox/navigation-night-v1",
           center: [longitude, latitude],
           zoom: 17,
         });
@@ -36,7 +36,7 @@ function Maps() {
     );
   }, []);
 
-  return <div ref={mapNode} style={{ width: "100%", height: "94vh" }} />;
+  return <div ref={mapNode} style={{ width: "100%", height: "100vh" }} />;
 }
 
 export default Maps;
