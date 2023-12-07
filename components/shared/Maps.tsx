@@ -1,40 +1,39 @@
 'use client'
+// Importaciones
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import mapboxgl, { LngLatLike, Marker } from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 function Maps() {
+  // Estado y referencias
   const [map, setMap] = useState<mapboxgl.Map | null>(null);
   const mapNode = useRef<HTMLDivElement | null>(null);
   const [userLocation, setUserLocation] = useState<LngLatLike | null>(null);
-  const markerRef = useRef<[Marker, Marker] | null>(null);
+  const markerRef = useRef<Marker | null>(null);
 
+  // Función para crear el elemento del marcador
   const createMarkerElement = useCallback(
     (isExplorationRadio = false) => {
       const markerElement = document.createElement("div");
-      markerElement.className = "custom-marker"; // Apply Tailwind classes here
+      markerElement.className = "custom-marker"; // Aplica las clases de Tailwind aquí
 
-      const markerSize = isExplorationRadio ? 270 : 18;
-      const borderWidth = 2;
-      const borderColor = "#4cd3c1"; // Color of the user location marker
+      const markerSize = isExplorationRadio ? 270 : 18; // Cambia el tamaño del marcador según sea necesario
 
       markerElement.style.width = `${markerSize}px`;
       markerElement.style.height = `${markerSize}px`;
       markerElement.style.borderRadius = "50%";
       markerElement.style.backgroundColor = isExplorationRadio
-        ? "rgba(76, 211, 193, 0.103)" // Translucent color for exploration radio
-        : "#4cd3c1"; // Green color for user location
-
-      if (isExplorationRadio) {
-        // Add border with separated points for exploration radio
-        markerElement.style.border = `${borderWidth}px dotted ${borderColor}`;
-      }
-
+        ? "rgba(76, 211, 193, 0.233)" // Color translúcido para el radio de exploración
+        : "#4cd3c1"; // Color verde para la ubicación del usuario
+        if (isExplorationRadio) {
+            markerElement.style.border = `2px dotted #4cd3c1`; // Ancho del borde y color
+          }
       return markerElement;
     },
     []
   );
 
+  // Efecto para inicializar el mapa y manejar eventos
   useEffect(() => {
     const node = mapNode.current;
     if (typeof window === "undefined" || node === null) return;
@@ -54,6 +53,24 @@ function Maps() {
         setMap(mapboxMap);
         setUserLocation([longitude, latitude]);
 
+        mapboxMap.on("load", () => {
+          mapboxMap.on("zoom", () => {
+            const userLocationMarker = markerRef.current;
+            const explorationRadioMarker = markerRef.current;
+
+            if (userLocationMarker && explorationRadioMarker) {
+              const zoomLevel = mapboxMap.getZoom();
+              const metersPerPixel = (156543.03392 * Math.cos(latitude * (Math.PI / 180))) / Math.pow(2, zoomLevel);
+              const explorationRadioRadiusInMeters = 270; // Cambia este valor al radio deseado
+              const explorationRadioRadiusInPixels = explorationRadioRadiusInMeters / metersPerPixel;
+              const markerSizeInPixels = explorationRadioRadiusInPixels * 0.9; // Multiplica por 2 para el diámetro
+
+              explorationRadioMarker.getElement().style.width = `${markerSizeInPixels}px`;
+              explorationRadioMarker.getElement().style.height = `${markerSizeInPixels}px`;
+            }
+          });
+        });
+
         return () => {
           if (mapboxMap) {
             mapboxMap.remove();
@@ -61,37 +78,39 @@ function Maps() {
         };
       },
       (error) => {
-        console.error("Error getting user location:", error);
+        console.error("Error al obtener la ubicación del usuario:", error);
       }
     );
   }, []);
 
+  // Efecto para actualizar los marcadores cuando cambia el mapa o la ubicación del usuario
   useEffect(() => {
     if (map && userLocation) {
-      // Remove previous markers if exist
+      // Eliminar marcadores anteriores si existen
       if (markerRef.current) {
-        markerRef.current.forEach((marker) => marker.remove());
+        markerRef.current.remove();
       }
 
-      // Create a new user location marker
+      // Crear un nuevo marcador de ubicación del usuario
       const userLocationMarker = new mapboxgl.Marker({
         element: createMarkerElement(),
       })
         .setLngLat(userLocation)
         .addTo(map);
 
-      // Create a new exploration radio marker
+      // Crear un nuevo marcador de radio de exploración
       const explorationRadioMarker = new mapboxgl.Marker({
-        element: createMarkerElement(true), // Pass true to indicate exploration radio marker
+        element: createMarkerElement(true), // Pasa true para indicar el marcador de radio de exploración
       })
-        .setLngLat(userLocation) // Set the same location as the user marker
+        .setLngLat(userLocation) // Establecer la misma ubicación que el marcador de usuario
         .addTo(map);
 
-      // Save the markers' references for cleanup
-      markerRef.current = [userLocationMarker, explorationRadioMarker];
+      // Guardar la referencia del marcador para limpieza
+      markerRef.current = explorationRadioMarker;
     }
   }, [map, userLocation, createMarkerElement]);
 
+  // Renderizar el contenedor del mapa
   return <div ref={mapNode} style={{ width: "100%", height: "100vh" }} />;
 }
 
