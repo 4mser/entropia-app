@@ -7,7 +7,33 @@ function Maps() {
   const [map, setMap] = useState<mapboxgl.Map | null>(null);
   const mapNode = useRef<HTMLDivElement | null>(null);
   const [userLocation, setUserLocation] = useState<LngLatLike | null>(null);
-  const markerRef = useRef<Marker | null>(null);
+  const markerRef = useRef<[Marker, Marker] | null>(null);
+
+  const createMarkerElement = useCallback(
+    (isExplorationRadio = false) => {
+      const markerElement = document.createElement("div");
+      markerElement.className = "custom-marker"; // Apply Tailwind classes here
+
+      const markerSize = isExplorationRadio ? 270 : 18;
+      const borderWidth = 2;
+      const borderColor = "#4cd3c1"; // Color of the user location marker
+
+      markerElement.style.width = `${markerSize}px`;
+      markerElement.style.height = `${markerSize}px`;
+      markerElement.style.borderRadius = "50%";
+      markerElement.style.backgroundColor = isExplorationRadio
+        ? "rgba(76, 211, 193, 0.103)" // Translucent color for exploration radio
+        : "#4cd3c1"; // Green color for user location
+
+      if (isExplorationRadio) {
+        // Add border with separated points for exploration radio
+        markerElement.style.border = `${borderWidth}px dotted ${borderColor}`;
+      }
+
+      return markerElement;
+    },
+    []
+  );
 
   useEffect(() => {
     const node = mapNode.current;
@@ -40,34 +66,29 @@ function Maps() {
     );
   }, []);
 
-  const createMarkerElement = useCallback(() => {
-    const markerElement = document.createElement("div");
-    markerElement.className = "custom-marker"; // Apply Tailwind classes here
-
-    markerElement.style.width = "20px";
-    markerElement.style.height = "20px";
-    markerElement.style.borderRadius = "50%";
-    markerElement.style.backgroundColor = "#4CAF50"; // Green color
-
-    return markerElement;
-  }, []);
-
   useEffect(() => {
     if (map && userLocation) {
-      // Remove previous marker if exists
+      // Remove previous markers if exist
       if (markerRef.current) {
-        markerRef.current.remove();
+        markerRef.current.forEach((marker) => marker.remove());
       }
 
-      // Create a new marker with the updated user location
-      const marker = new mapboxgl.Marker({
+      // Create a new user location marker
+      const userLocationMarker = new mapboxgl.Marker({
         element: createMarkerElement(),
       })
         .setLngLat(userLocation)
         .addTo(map);
 
-      // Save the marker reference for cleanup
-      markerRef.current = marker;
+      // Create a new exploration radio marker
+      const explorationRadioMarker = new mapboxgl.Marker({
+        element: createMarkerElement(true), // Pass true to indicate exploration radio marker
+      })
+        .setLngLat(userLocation) // Set the same location as the user marker
+        .addTo(map);
+
+      // Save the markers' references for cleanup
+      markerRef.current = [userLocationMarker, explorationRadioMarker];
     }
   }, [map, userLocation, createMarkerElement]);
 

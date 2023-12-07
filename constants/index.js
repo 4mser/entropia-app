@@ -5,6 +5,11 @@ export const sidebarLinks = [
     label: "Inicio",
   },
   {
+    imgURL: "/assets/map-linear.svg",
+    route: "/map",
+    label: "Mapa",
+  },
+  {
     imgURL: "/assets/search.svg",
     route: "/search",
     label: "Buscar",
