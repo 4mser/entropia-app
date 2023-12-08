@@ -5,132 +5,112 @@ import mapboxgl, { LngLatLike, Marker } from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 function Maps() {
+  // Estado y referencias
   const [map, setMap] = useState<mapboxgl.Map | null>(null);
   const mapNode = useRef<HTMLDivElement | null>(null);
   const [userLocation, setUserLocation] = useState<LngLatLike | null>(null);
   const markerRef = useRef<Marker | null>(null);
 
+  // Función para crear el elemento del marcador
   const createMarkerElement = useCallback(
     (isExplorationRadio = false) => {
       const markerElement = document.createElement("div");
-      markerElement.className = "custom-marker";
+      markerElement.className = "custom-marker"; // Aplica las clases de Tailwind aquí
 
-      const markerSize = isExplorationRadio ? 270 : 18;
+      const markerSize = isExplorationRadio ? 270 : 18; // Cambia el tamaño del marcador según sea necesario
 
       markerElement.style.width = `${markerSize}px`;
       markerElement.style.height = `${markerSize}px`;
       markerElement.style.borderRadius = "50%";
       markerElement.style.backgroundColor = isExplorationRadio
-        ? "rgba(76, 211, 193, 0.233)"
-        : "#4cd3c1";
-
-      if (isExplorationRadio) {
-        markerElement.style.border = `2px dotted #4cd3c1`;
-      }
-
+        ? "rgba(76, 211, 193, 0.233)" // Color translúcido para el radio de exploración
+        : "#4cd3c1"; // Color verde para la ubicación del usuario
+        if (isExplorationRadio) {
+            markerElement.style.border = `2px dotted #4cd3c1`; // Ancho del borde y color
+          }
       return markerElement;
     },
     []
   );
 
+  // Efecto para inicializar el mapa y manejar eventos
   useEffect(() => {
     const node = mapNode.current;
     if (typeof window === "undefined" || node === null) return;
 
-    const initializeMap = async () => {
-      try {
-        const position = await getCurrentPosition();
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
 
         const mapboxMap = new mapboxgl.Map({
           container: node,
           accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "",
           style: "mapbox://styles/mapbox/navigation-night-v1",
-          center: [position.coords.longitude, position.coords.latitude],
+          center: [longitude, latitude],
           zoom: 17,
         });
 
         setMap(mapboxMap);
-        setUserLocation([position.coords.longitude, position.coords.latitude]);
-
-        const userLocationMarker = new mapboxgl.Marker({
-          element: createMarkerElement(),
-        })
-          .setLngLat([position.coords.longitude, position.coords.latitude])
-          .addTo(mapboxMap);
-
-        const explorationRadioMarker = new mapboxgl.Marker({
-          element: createMarkerElement(true),
-        })
-          .setLngLat([position.coords.longitude, position.coords.latitude])
-          .addTo(mapboxMap);
-
-        markerRef.current = explorationRadioMarker;
-
-        mapboxMap.on("load", () => {
-          watchUserLocation(mapboxMap);
-        });
-      } catch (error) {
-        console.error("Error al obtener la ubicación del usuario:", error);
-      }
-    };
-
-    initializeMap();
-  }, []);
-
-  const getCurrentPosition = (): Promise<GeolocationPosition> => {
-    return new Promise((resolve, reject) => {
-      navigator.geolocation.getCurrentPosition(
-        (position) => resolve(position),
-        (error) => reject(error)
-      );
-    });
-  };
-
-  const watchUserLocation = (mapboxMap: mapboxgl.Map) => {
-    navigator.geolocation.watchPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
-
         setUserLocation([longitude, latitude]);
 
-        const userLocationMarker = markerRef.current;
+        mapboxMap.on("load", () => {
+          mapboxMap.on("zoom", () => {
+            const userLocationMarker = markerRef.current;
+            const explorationRadioMarker = markerRef.current;
 
-        if (userLocationMarker) {
-          userLocationMarker.setLngLat([longitude, latitude]);
-        }
+            if (userLocationMarker && explorationRadioMarker) {
+              const zoomLevel = mapboxMap.getZoom();
+              const metersPerPixel = (156543.03392 * Math.cos(latitude * (Math.PI / 180))) / Math.pow(2, zoomLevel);
+              const explorationRadioRadiusInMeters = 270; // Cambia este valor al radio deseado
+              const explorationRadioRadiusInPixels = explorationRadioRadiusInMeters / metersPerPixel;
+              const markerSizeInPixels = explorationRadioRadiusInPixels * 0.9; // Multiplica por 2 para el diámetro
 
-        mapboxMap.flyTo({
-          center: [longitude, latitude],
+              explorationRadioMarker.getElement().style.width = `${markerSizeInPixels}px`;
+              explorationRadioMarker.getElement().style.height = `${markerSizeInPixels}px`;
+            }
+          });
         });
+
+        return () => {
+          if (mapboxMap) {
+            mapboxMap.remove();
+          }
+        };
       },
       (error) => {
         console.error("Error al obtener la ubicación del usuario:", error);
       }
     );
-  };
+  }, []);
 
+  // Efecto para actualizar los marcadores cuando cambia el mapa o la ubicación del usuario
   useEffect(() => {
     if (map && userLocation) {
+      // Eliminar marcadores anteriores si existen
       if (markerRef.current) {
-        markerRef.current.setLngLat(userLocation);
-      } else {
-        const userLocationMarker = new mapboxgl.Marker({
-          element: createMarkerElement(),
-        })
-          .setLngLat(userLocation)
-          .addTo(map);
-
-        const explorationRadioMarker = new mapboxgl.Marker({
-          element: createMarkerElement(true),
-        })
-          .setLngLat(userLocation)
-          .addTo(map);
-
-        markerRef.current = explorationRadioMarker;
+        markerRef.current.remove();
       }
+
+      // Crear un nuevo marcador de ubicación del usuario
+      const userLocationMarker = new mapboxgl.Marker({
+        element: createMarkerElement(),
+      })
+        .setLngLat(userLocation)
+        .addTo(map);
+
+      // Crear un nuevo marcador de radio de exploración
+      const explorationRadioMarker = new mapboxgl.Marker({
+        element: createMarkerElement(true), // Pasa true para indicar el marcador de radio de exploración
+      })
+        .setLngLat(userLocation) // Establecer la misma ubicación que el marcador de usuario
+        .addTo(map);
+
+      // Guardar la referencia del marcador para limpieza
+      markerRef.current = explorationRadioMarker;
     }
   }, [map, userLocation, createMarkerElement]);
 
+  // Renderizar el contenedor del mapa
   return <div ref={mapNode} style={{ width: "100%", height: "100vh" }} />;
 }
 
