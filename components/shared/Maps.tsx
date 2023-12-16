@@ -60,7 +60,9 @@ function Maps() {
         });
 
         mapboxMap.on('style.load', () => {
-          mapboxMap.setConfigProperty('basemap', 'lightPreset', 'dusk')
+          mapboxMap.setConfigProperty('basemap', 'lightPreset', 'dusk');
+          mapboxMap.setConfigProperty('basemap', 'showPointOfInterestLabels',  false)
+      
         })
 
         setMap(mapboxMap);
