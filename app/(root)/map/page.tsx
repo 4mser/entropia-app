@@ -6,8 +6,8 @@ function page() {
         <Maps />
 
         // categorías
-        <div className="fixed top-4 right-4 rounded-full flex flex-col p-[2px] justify-center items-center w-14 h-14 overflow-hidden bg-gradient-to-tr from-blue to-green-700  backdrop-blur-sm shadow-custom shadow-white/10">
-          <div className="rounded-full w-full h-full bg-glassmorphism flex justify-center items-center">
+        <div className="fixed top-4 right-4 rounded-full flex flex-col p-[2px] justify-center items-center w-12 h-12 overflow-hidden bg-gradient-to-tr from-blue to-green-700  backdrop-blur-sm">
+          <div className="rounded-full w-full h-full bg-glassmorphism flex justify-center p-1 items-center">
             <img src="./assets/mushroom.svg" alt="" className="opacity-80 -translate-y-[2px]" />
           </div>
         </div>
