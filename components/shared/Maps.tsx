@@ -15,9 +15,9 @@ function Maps() {
   const createMarkerElement = useCallback(
     (isExplorationRadio = false) => {
       const markerElement = document.createElement("div");
-      markerElement.className = "custom-marker"; // Aplica las clases de Tailwind aquí
+      markerElement.className = "custom-marker"; // Aplicar las clases de Tailwind aquí
 
-      const markerSize = isExplorationRadio ? 270 : 18; // Cambia el tamaño del marcador según sea necesario
+      const markerSize = isExplorationRadio ? 270 : 18; // Cambiar el tamaño del marcador según sea necesario
 
       markerElement.style.width = `${markerSize}px`;
       markerElement.style.height = `${markerSize}px`;
@@ -60,8 +60,13 @@ function Maps() {
         });
 
         mapboxMap.on('style.load', () => {
+          //@ts-ignore
           mapboxMap.setConfigProperty('basemap', 'lightPreset', 'dusk');
-          mapboxMap.setConfigProperty('basemap', 'showPointOfInterestLabels',  false)
+          //@ts-ignore
+          mapboxMap.setConfigProperty('basemap', 'showPointOfInterestLabels',  false);
+          //@ts-ignore
+          mapboxMap.setConfigProperty('basemap', 'showTransitLabels',  false);
+
       
         })
 
