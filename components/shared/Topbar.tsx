@@ -25,7 +25,7 @@ function Topbar() {
           appearance={{
             baseTheme: dark,
             elements: {
-              organizationSwitcherTrigger: "py-2 pl-2 ml-3 p-0",
+              organizationSwitcherTrigger: "py-2 w-16 pl-2  ml-3 p-0",
             },
           }}
         />
