@@ -121,7 +121,7 @@ function Maps() {
   return (
     <section>
       <div ref={mapNode} style={{ width: "100%", height: "100vh" }} />
-      <button onClick={centerMapOnUserLocation} className="fixed z-50 right-4 bottom-48 bg-glassmorphism backdrop-blur-lg flex justify-center items-center w-14 h-14 rounded-full p-4">
+      <button onClick={centerMapOnUserLocation} className="fixed z-50 right-4 bottom-32 bg-glassmorphism backdrop-blur-lg flex justify-center items-center w-14 h-14 rounded-full p-4">
         <img src="./assets/ubicacion.svg" alt="" className="w-full h-full rotate-45 translate-x-[1.5px] -translate-y-[1px]" />
       </button>
     </section>
