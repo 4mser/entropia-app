@@ -5,16 +5,19 @@ function page() {
     <section className="w-full h-full overflow-hidden">
         <Maps />
 
+        // categorías
+        <div className="fixed top-4 right-4 rounded-full flex flex-col p-[2px] justify-center items-center w-14 h-14 overflow-hidden bg-gradient-to-tr from-blue to-green-700  backdrop-blur-sm shadow-custom shadow-white/10">
+          <div className="rounded-full w-full h-full bg-glassmorphism flex justify-center items-center">
+            <img src="./assets/mushroom.svg" alt="" className="opacity-80 -translate-y-[2px]" />
+          </div>
+        </div>
+
         // pasos
         <div className="fixed bottom-16 right-4 rounded-full flex flex-col p-2 justify-center items-center w-14 h-14 overflow-hidden bg-black/20 border-2 border-white/70 backdrop-blur-sm shadow-custom shadow-white/10">
           <img src="./assets/walk.svg" alt="" className="translate-x-px opacity-80" />
           <p className="font-medium text-[10px] text-white">0</p>
         </div>
 
-        {/* // porcentaje de exploración
-        <div className="fixed bottom-16 right-20 rounded-full flex flex-col p-2 justify-center items-center w-14 h-14 overflow-hidden bg-black/20 border-2 border-white/70 backdrop-blur-sm shadow-custom shadow-white/10">
-          <p className="font-medium text-[16px] text-white/80">0%</p>
-        </div> */}
     </section>
   )
 }
