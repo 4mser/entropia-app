@@ -14,7 +14,7 @@ function Bottombar() {
   return (
     <section className='bottombar'>
       <div className='bottombar_container'>
-        {bottombarLinks.map((link) => {
+        {bottombarLinks.map((link, index) => {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
             pathname === link.route;
@@ -31,7 +31,7 @@ function Bottombar() {
               <img
                 src={link.imgURL}
                 alt={link.label}
-                width={22}
+                width={`${index === 1 ? '25' : '22'}`}
                 height={22}
                 className='object-contain'
               />

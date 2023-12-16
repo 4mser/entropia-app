@@ -55,7 +55,7 @@ const LeftSidebar = () => {
         </Link>
       <div className='flex w-full flex-1 flex-col gap-7 px-6 mt-12'>
       
-        {sidebarLinks.map((link) => {
+        {sidebarLinks.map((link, index) => {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
             pathname === link.route;
@@ -72,7 +72,7 @@ const LeftSidebar = () => {
                 <img
                   src={link.imgURL}
                   alt={link.label}
-                  width={24}
+                  width={`${index === 1 ? '26' : '24'}`}
                   height={24}
                 />
 
