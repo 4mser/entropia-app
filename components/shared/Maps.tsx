@@ -33,6 +33,13 @@ function Maps() {
     []
   );
 
+  // Función para centrar el mapa en la ubicación del usuario
+  const centerMapOnUserLocation = () => {
+    if (map && userLocation) {
+      map.flyTo({ center: userLocation, zoom: 17 });
+    }
+  };
+
   // Efecto para inicializar el mapa y manejar eventos
   useEffect(() => {
     const node = mapNode.current;
@@ -111,7 +118,14 @@ function Maps() {
   }, [map, userLocation, createMarkerElement]);
 
   // Renderizar el contenedor del mapa
-  return <div ref={mapNode} style={{ width: "100%", height: "100vh" }} />;
+  return (
+    <section>
+      <div ref={mapNode} style={{ width: "100%", height: "100vh" }} />
+      <button onClick={centerMapOnUserLocation} className="absolute z-50 right-4 bottom-[64px] bg-dark-4/80 flex justify-center items-center w-10 h-10 rounded-full p-2.5">
+        <img src="./assets/ubicacion.svg" alt="" className="w-full h-full rotate-45 translate-x-[1.5px]" />
+      </button>
+    </section>
+  );
 }
 
 export default Maps;
