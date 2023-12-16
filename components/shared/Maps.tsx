@@ -52,14 +52,20 @@ function Maps() {
         const mapboxMap = new mapboxgl.Map({
           container: node,
           accessToken: process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "",
-          style: "mapbox://styles/mapbox/navigation-night-v1",
+          // style: "mapbox://styles/mapbox/navigation-night-v1",
+          style: "mapbox://styles/mapbox/standard",
+
           center: [longitude, latitude],
           zoom: 17,
         });
 
+        mapboxMap.on('style.load', () => {
+          mapboxMap.setConfigProperty('basemap', 'lightPreset', 'dusk')
+        })
+
         setMap(mapboxMap);
         setUserLocation([longitude, latitude]);
-
+        
         mapboxMap.on("load", () => {
           mapboxMap.on("zoom", () => {
             const userLocationMarker = markerRef.current;
