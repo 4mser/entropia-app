@@ -119,9 +119,9 @@ function Maps() {
 
   // Renderizar el contenedor del mapa
   return (
-    <section className="h-fit">
+    <section>
       <div ref={mapNode} style={{ width: "100%", height: "100vh" }} />
-      <button onClick={centerMapOnUserLocation} className="absolute z-50 right-4 top-4 bg-dark-4/80 flex justify-center items-center w-10 h-10 rounded-full p-2.5">
+      <button onClick={centerMapOnUserLocation} className="fixed z-50 right-4 bottom-[64px] bg-dark-4/80 flex justify-center items-center w-10 h-10 rounded-full p-2.5">
         <img src="./assets/ubicacion.svg" alt="" className="w-full h-full rotate-45 translate-x-[1.5px]" />
       </button>
     </section>
