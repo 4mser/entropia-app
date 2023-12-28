@@ -46,10 +46,10 @@ function UserPic({ imgUrl, name, username }: Props) {
               transition={{ ease: "circOut", duration: 0.2 }}
             >
               <div className="pt-5 px-20">
-                <h2 className="text-white text-[14px]">{name}</h2>
-                <p className="text-white/40 text-[12px]">@{username}</p>
+                <h2 className="text-white text-[14px] font-bold">{name}</h2>
+                <p className="text-white/40 text-[12px] font-medium">@{username}</p>
               </div>
-              <ul className="flex flex-col px-4 gap-8 pt-32">
+              <ul className="flex flex-col px-4 gap-8 pt-14">
                 <li className=" text-white text-[19px]">
                   <Link href={`/profile/${userId}`} className="flex items-center gap-4 ">
                     <img src="../assets/menu-map/perfil.svg" alt="icono" className="h-7" />
