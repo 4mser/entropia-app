@@ -75,7 +75,7 @@ body {
   }
 
   .bottombar_link {
-    @apply relative flex flex-col items-center gap-2  p-3 sm:flex-1 sm:px-2 sm:py-2.5;
+    @apply relative flex flex-col items-center gap-[2px]  p-3 sm:flex-1 sm:px-2 sm:py-2.5;
   }
 
   .leftsidebar {

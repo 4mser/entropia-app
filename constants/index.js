@@ -41,7 +41,7 @@ export const sidebarLinks = [
   },
 ];
 
-export const bottombarLinks = [
+/* export const bottombarLinks = [
   {
     imgURL: "/assets/home.svg",
     route: "/",
@@ -52,11 +52,6 @@ export const bottombarLinks = [
     route: "/map",
     label: "Mapa",
   },
-  /* {
-    imgURL: "/assets/heart.svg",
-    route: "/activity",
-    label: "Actividad",
-  }, */
   {
     imgURL: "/assets/atom-linear.svg",
     route: "/research-lab",
@@ -71,6 +66,34 @@ export const bottombarLinks = [
     imgURL: "/assets/user.svg",
     route: "/profile",
     label: "Perfil",
+  },
+]; */
+
+export const bottombarLinks = [
+  {
+    imgURL: "/assets/map-linear.svg",
+    route: "/map",
+    label: "Explora",
+  },
+  {
+    imgURL: "/assets/tokens.svg",
+    route: "/contenido",
+    label: "Contenido",
+  },
+  {
+    imgURL: "/assets/misiones.svg",
+    route: "/missions",
+    label: "Misiones",
+  },
+  {
+    imgURL: "/assets/community.svg",
+    route: "/",
+    label: "Social",
+  },
+  {
+    imgURL: "/assets/tienda.svg",
+    route: "/store",
+    label: "Tienda",
   },
 ];
 
