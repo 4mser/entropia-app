@@ -21,9 +21,9 @@ function UserPic({ imgUrl, name, username }: Props) {
 
 
   return (
-    <section className="">
+    <section className="md:hidden">
       <div
-        className="fixed z-50 md:absolute top-4 left-4 rounded-full flex flex-col p-px justify-center items-center w-12 h-12 overflow-hidden"
+        className="fixed z-50 md:absolute top-4 left-4 rounded-full flex flex-col  justify-center items-center w-12 h-12 overflow-hidden"
         onClick={toggleMenu}
       >
         <img
@@ -49,36 +49,36 @@ function UserPic({ imgUrl, name, username }: Props) {
                 <h2 className="text-white text-[14px] font-bold">{name}</h2>
                 <p className="text-white/40 text-[12px] font-medium">@{username}</p>
               </div>
-              <ul className="flex flex-col px-4 gap-8 pt-14">
-                <li className=" text-white text-[19px]">
+              <ul className="flex flex-col px-4 gap-8 pt-14 text-[19px] text-white">
+                <li>
                   <Link href={`/profile/${userId}`} className="flex items-center gap-4 ">
                     <img src="../assets/menu-map/perfil.svg" alt="icono" className="h-7" />
                     Perfil
                   </Link>
                 </li>
-                <li className="flex items-center text-white gap-4 text-[19px]">
+                <li className="flex items-center  gap-4 ">
                   <img src="../assets/menu-map/billetera.svg" alt="icono" className="h-7" />
                   Billetera
                 </li>
-                <li className="flex items-center text-white gap-4 text-[19px]">
+                <li className="flex items-center  gap-4 ">
                   <img src="../assets/menu-map/premium.svg" alt="icono" className="h-7" />
                   Premium
                 </li>
-                <li className="flex items-center text-white gap-4 text-[19px]">
+                <li className="flex items-center  gap-4 ">
                   <img src="../assets/menu-map/planesempresas.svg" alt="icono" className="h-7" />
                   Planes empresas
                 </li>
-                <li className="flex items-center text-white gap-4 text-[19px]">
+                <li className="flex items-center  gap-4 ">
                   <img src="../assets/menu-map/publicidad.svg" alt="icono" className="h-7" />
                   Publicidad
                 </li>
-                <li className=" text-white  text-[19px]">
+                <li className="   ">
                   <Link href='/research-lab' className="flex items-center gap-4">
                     <img src="../assets/menu-map/researchlab.svg" alt="icono" className="h-7" />
                     Research Lab
                   </Link>
                 </li>
-                <li className="flex items-center text-white gap-4 text-[19px]">
+                <li className="flex items-center  gap-4 ">
                   <img src="../assets/menu-map/configuracion.svg" alt="icono" className="h-7" />
                   Configuración
                 </li>
