@@ -41,7 +41,7 @@ function Categorias({ imgUrl }: Props) {
 
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div className="fixed top-0 left-0 z-[50] w-full h-screen ">
+          <motion.div className="fixed top-0 left-0 z-[60] w-full h-screen ">
             <motion.div
               drag="y"
               dragConstraints={dragConstraints}
@@ -50,17 +50,17 @@ function Categorias({ imgUrl }: Props) {
                   toggleMenu();
                 }
               }}
-              className="menu fixed z-[51] bottom-0 left-0 w-full h-fit backdrop-blur-xl select-none border border-white/10 rounded-t-[40px] overflow-hidden"
+              className="menu fixed z-[61] bottom-0 left-0 w-full h-fit backdrop-blur-xl select-none border border-white/10 rounded-t-[40px] overflow-hidden"
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ ease: 'circOut', duration: 0.2 }}
             >
-               <div className='w-full pt-2 h-full flex justify-center'>
+               <div className='w-full pt-2 h-full flex justify-center hover:cursor-grab'>
                 <div className='w-10 h-1 rounded-full bg-white/50 text-center'></div>
                </div>
               <p className="text-white text-center pt-2 text-[14px]">Categorías</p>
-              <ul className="flex flex-col px-4 gap-1 pt-5 font-normal text-[12px] text-white mb-10">
+              <ul className="flex flex-col px-4 gap-1 pt-3 font-normal text-[12px] text-white mb-5">
                 {categorias.map((categoria, index) => (
                   <li key={categoria.name} className="w-full flex justify-between items-center px-2 py-1">
                     <div className="flex items-center gap-4">
