@@ -3,6 +3,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useAuth } from "@clerk/nextjs";
+import { categorias } from "@/constants";
+import {Switch, cn} from "@nextui-org/react";
 
 interface Props {
   imgUrl: string;
@@ -17,78 +19,6 @@ function Categorias({ imgUrl }: Props) {
 
   const { userId } = useAuth();
 
-  const categorias = [
-    {
-        id: 1,
-        name: 'Naturaleza',
-        icon: '../assets/categories/naturaleza.svg'
-    },
-    {
-        id: 2,
-        name: 'Rutas y Aventuras',
-        icon: '../assets/categories/rutas.svg'
-    },
-    {
-        id: 3,
-        name: 'Comidas y Bebidas',
-        icon: '../assets/categories/comidas.svg'
-    },
-    {
-        id: 4,
-        name: 'Deporte y Fitness',
-        icon: '../assets/categories/deporte.svg'
-    },
-    {
-        id: 5,
-        name: 'Actividades y Eventos',
-        icon: '../assets/categories/eventos.svg'
-    },
-    {
-        id: 6,
-        name: 'Educación y Cultura',
-        icon: '../assets/categories/cultura.svg'
-    },
-    {
-        id: 7,
-        name: 'Activismo y Medioambiente',
-        icon: '../assets/categories/medioambiente.svg'
-    },
-    {
-        id: 8,
-        name: 'Ciencia y Tecnología',
-        icon: '../assets/categories/ciencia.svg'
-    },
-    {
-        id: 9,
-        name: 'Emprendimientos',
-        icon: '../assets/categories/emprendimientos.svg'
-    },
-    {
-        id: 10,
-        name: 'Exploración Urbana',
-        icon: '../assets/categories/exploracion.svg'
-    },
-    {
-        id: 11,
-        name: 'Arte y Creatividad',
-        icon: '../assets/categories/arte.svg'
-    },
-    {
-        id: 12,
-        name: 'Salud y Bienestar',
-        icon: '../assets/categories/salud.svg'
-    },
-    {
-        id: 13,
-        name: 'Belleza y Estilo',
-        icon: '../assets/categories/belleza.svg'
-    },
-    {
-        id: 14,
-        name: 'Historia y Patrimonio',
-        icon: '../assets/categories/historia.svg'
-    }
-  ]
 
 
   return (
@@ -112,7 +42,7 @@ function Categorias({ imgUrl }: Props) {
             className="fixed top-0 left-0 z-[50] w-full h-screen"
           >
             <motion.div
-              className="menu fixed z-[49] bottom-0 left-0 w-full h-fit backdrop-blur-xl select-none  border-t border-white/10 rounded-t-3xl overflow-hidden"
+              className="menu fixed z-[51] bottom-0 left-0 w-full h-fit backdrop-blur-xl select-none  border-t border-white/10 rounded-t-3xl overflow-hidden"
               initial={{opacity: 1, y: "100%" }}
               animate={{ opacity: 1,  y: 0 }}
               exit={{ opacity: 1, y: "100%" }}
@@ -121,11 +51,14 @@ function Categorias({ imgUrl }: Props) {
                 <p className="text-white text-center pt-2 text-[14px]">Categorías</p>
               <ul className="flex flex-col px-4 gap-3 pt-5 font-normal text-[12px] text-white mb-10">
                 
-                {categorias.map((categoria) => (
-                    <li className="flex items-center  gap-4 ">
-                        <img src={categoria.icon} alt={categoria.name} className="h-6" />
-                        {categoria.name}
-                    </li>
+                {categorias.map((categoria, index) => (
+                    <div className="w-full flex justify-between px-2">
+                        <li className="flex items-center  gap-4 ">
+                            <img src={categoria.icon} alt={categoria.name} className="h-6" />
+                            {categoria.name}
+                        </li>
+                        <Switch defaultSelected={index=== 0} color="success" className="" />
+                    </div>
                 ))}
                 
               </ul>
