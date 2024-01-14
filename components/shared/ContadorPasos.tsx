@@ -23,12 +23,12 @@ function ContadorPasos() {
       >
           <div className='w-full h-full flex items-center gap-2'>
             <img src='../assets/walk.svg' alt="logo" className="w-full h-full object-contain rounded-full shadow-2xl cursor-pointer" />
-            <p>4326</p>
+            <p>240</p>
           </div>
 
           <div className='w-full h-full flex items-center gap-2'>
             <img src='../assets/cripto.svg' alt="logo" className="w-full h-full object-contain rounded-full shadow-2xl cursor-pointer" />
-            <p>1200</p>
+            <p>12</p>
           </div>
       </div>
       </section>
