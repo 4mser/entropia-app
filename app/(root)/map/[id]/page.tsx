@@ -34,7 +34,7 @@ async function Page({ params }: { params: { id: string } }) {
           username={userInfo.username}
         />
 
-        {/* <ContadorPasos /> */}
+        <ContadorPasos />
         
 
     </section>
