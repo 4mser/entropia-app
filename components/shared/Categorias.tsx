@@ -72,7 +72,7 @@ function Categorias({ imgUrl }: Props) {
                     <div
                     onClick={() => toggleSwitch(index)}
                     className={`w-14 h-7 rounded-full p-1 cursor-pointer transition-colors ${
-                        switchStates[index] ? 'bg-gradient-to-r from-blue to-green-500' : 'bg-gray-500'
+                        switchStates[index] ? 'bg-gradient-to-r from-blue to-green-500' : 'bg-white/10'
                     }`}
                     >
                     <div
