@@ -134,8 +134,8 @@ function Maps() {
   return (
     <section>
       <div ref={mapNode} style={{ width: "100%", height: "100vh" }} />
-      <button onClick={centerMapOnUserLocation} className="fixed md:absolute z-50 right-4 bottom-32 lg:bottom-28 bg-glassmorphism backdrop-blur-lg flex justify-center items-center w-14 h-14 rounded-full p-4">
-        <img src="../assets/ubicacion.svg" alt="" className="w-full h-full rotate-45 translate-x-[1.5px] -translate-y-[1px]" />
+      <button onClick={centerMapOnUserLocation} className="fixed md:absolute z-50 right-4 bottom-32 lg:bottom-28 bg-black/50  flex justify-center items-center w-9 h-9 rounded-full p-1.5">
+        <img src="../assets/map-icons/gps.svg" alt="" className="w-full h-full rotate-45 opacity-80" />
       </button>
     </section>
   );

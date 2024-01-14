@@ -60,7 +60,7 @@ function MisionesFiltro() {
               <ul className="grid grid-cols-3 px-4 gap-2 pt-3 font-normal text-[12px] text-white mb-5">
                 {misiones.map((mision, index) => (
                   <li key={mision.name} 
-                    className="relative w-full  rounded-2xl overflow-hidden shadow-lg" 
+                    className="relative w-full  rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform hover:cursor-pointer" 
                     onClick={() => activarMision(index)}
                   >
                       <div className={`filtrador absolute w-8 h-8  p-[3px] rounded-full   top-1 left-1 flex justify-center items-center ${misionActiva === index ? 'bg-gradient-to-tr from-red-800 to-yellow-500' : ' border-white/50 border-3'}`}>

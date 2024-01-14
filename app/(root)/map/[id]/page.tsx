@@ -1,4 +1,6 @@
+import BotonesMapa from "@/components/shared/BotonesMapa";
 import Categorias from "@/components/shared/Categorias";
+import ContadorPasos from "@/components/shared/ContadorPasos";
 import Maps from "@/components/shared/Maps"
 import MisionesFiltro from "@/components/shared/MisionesFiltro";
 import UserPic from "@/components/shared/userPic"
@@ -18,6 +20,8 @@ async function Page({ params }: { params: { id: string } }) {
           </div>
         </div> */}
 
+        <BotonesMapa />
+
         <Categorias 
           imgUrl={'../assets/categories/todo.svg'}
         />
@@ -29,6 +33,9 @@ async function Page({ params }: { params: { id: string } }) {
           name={userInfo.name}
           username={userInfo.username}
         />
+
+        {/* <ContadorPasos /> */}
+        
 
     </section>
   )
