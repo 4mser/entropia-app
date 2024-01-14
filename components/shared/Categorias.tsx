@@ -59,27 +59,29 @@ function Categorias({ imgUrl }: Props) {
                <div className='w-full pt-2 h-full flex justify-center hover:cursor-grab'>
                 <div className='w-10 h-1 rounded-full bg-white/50 text-center'></div>
                </div>
-              <p className="text-white text-center pt-2 text-[14px]">Categorías</p>
+              <p className="text-white text-center pt-2 text-[14px] font-medium">Categorías</p>
               <ul className="flex flex-col px-4 gap-1 pt-3 font-normal text-[12px] text-white mb-5">
-                {categorias.map((categoria, index) => (
-                  <li key={categoria.name} className="w-full flex justify-between items-center px-2 py-1">
-                    <div className="flex items-center gap-4">
-                      <img src={categoria.icon} alt={categoria.name} className="h-6" />
-                      {categoria.name}
+              {categorias.map((categoria, index) => (
+                <li key={categoria.name} className="w-full flex justify-between items-center px-2 py-1">
+                    <div 
+                    className={`flex items-center gap-4 transition-opacity ${switchStates[index] ? 'opacity-100' : 'opacity-50'}`}
+                    >
+                        <img src={categoria.icon} alt={categoria.name} className="h-6" />
+                        {categoria.name}
                     </div>
                     <div
-                      onClick={() => toggleSwitch(index)}
-                      className={`w-14 h-7 rounded-full p-1 cursor-pointer transition-colors ${
+                    onClick={() => toggleSwitch(index)}
+                    className={`w-14 h-7 rounded-full p-1 cursor-pointer transition-colors ${
                         switchStates[index] ? 'bg-gradient-to-r from-blue to-green-500' : 'bg-gray-500'
-                      }`}
+                    }`}
                     >
-                      <div
+                    <div
                         className={`bg-white w-5 h-5 rounded-full shadow transform transition-transform ${
-                          switchStates[index] ? 'translate-x-7' : 'translate-x-0'
+                        switchStates[index] ? 'translate-x-7' : 'translate-x-0'
                         }`}
-                      />
+                    />
                     </div>
-                  </li>
+                </li>
                 ))}
               </ul>
             </motion.div>
