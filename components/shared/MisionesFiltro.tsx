@@ -20,6 +20,10 @@ function MisionesFiltro() {
   // Función para activar una misión
   const activarMision = (index: number) => {
     setMisionActiva(index);
+    setTimeout(() => {
+      setMenuOpen(false);
+      
+    }, 300)
   };
   
 
