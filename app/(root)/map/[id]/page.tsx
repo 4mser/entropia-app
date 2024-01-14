@@ -12,6 +12,7 @@ async function Page({ params }: { params: { id: string } }) {
   return (
     <section className="w-full h-full overflow-hidden relative">
         <Maps />
+        <ContadorPasos />
 
         {/* categorias */}
         {/* <div className="fixed md:absolute top-4 right-4 rounded-full flex flex-col p-[2px] justify-center items-center w-12 h-12 overflow-hidden bg-gradient-to-tr from-blue to-green-700  backdrop-blur-sm">
@@ -34,7 +35,6 @@ async function Page({ params }: { params: { id: string } }) {
           username={userInfo.username}
         />
 
-        <ContadorPasos />
         
 
     </section>
