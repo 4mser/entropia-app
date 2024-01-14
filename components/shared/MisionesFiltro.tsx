@@ -59,8 +59,11 @@ function MisionesFiltro() {
               <p className="text-white text-center pt-2 text-[14px] font-medium">Filtrar Misión</p>
               <ul className="grid grid-cols-3 px-4 gap-2 pt-3 font-normal text-[12px] text-white mb-5">
                 {misiones.map((mision, index) => (
-                  <li key={mision.name} className="w-full  rounded-2xl overflow-hidden">
+                  <li key={mision.name} className="relative w-full  rounded-2xl overflow-hidden shadow-lg">
                       <img src={mision.image} alt="" className='w-full h-28 object-cover' />
+                      <div className='absolute w-6 h-6 rounded-full overflow-hidden left-1/2 -translate-x-1/2 -translate-y-[11px] border-2 border-[#1C222C]'>
+                        <img src={mision.marca} alt="" />
+                      </div>
                       <div className='h-fit bg-[#1C222C] flex items-center justify-center text-center'>
                         <span className='text-[9px] mt-4 mb-2'>{mision.name}</span>
                       </div>

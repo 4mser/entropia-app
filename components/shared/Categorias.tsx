@@ -62,7 +62,7 @@ function Categorias({ imgUrl }: Props) {
               <p className="text-white text-center pt-2 text-[14px] font-medium">Categorías</p>
               <ul className="flex flex-col px-4 gap-1 pt-3 font-normal text-[12px] text-white mb-5">
               {categorias.map((categoria, index) => (
-                <li key={categoria.name} className="w-full flex justify-between items-center px-2 py-1">
+                <li key={categoria.name} className="w-full flex justify-between items-center px-2 py-1 ">
                     <div 
                     className={`flex items-center gap-4 transition-opacity ${switchStates[index] ? 'opacity-100' : 'opacity-50'}`}
                     >
