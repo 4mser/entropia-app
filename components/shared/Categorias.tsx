@@ -31,7 +31,7 @@ function Categorias({ imgUrl }: Props) {
   return (
     <section className="md:hidden">
       <div
-        className="fixed md:absolute top-4 right-4 rounded-full flex flex-col p-[2px] justify-center items-center w-12 h-12 overflow-hidden bg-gradient-to-tr from-blue to-green-700 backdrop-blur-sm"
+        className="fixed z-[60] md:absolute top-4 right-4 rounded-full flex flex-col p-[2px] justify-center items-center w-12 h-12 overflow-hidden bg-gradient-to-tr from-blue to-green-700 backdrop-blur-sm"
         onClick={toggleMenu}
       >
         <div className="rounded-full w-full h-full bg-glassmorphism flex justify-center p-1 items-center">
