@@ -122,12 +122,20 @@ const MisionesFiltro: React.FC = () => {
   };
 
   const handleDragEnd = (event: MouseEvent, info: { point: { y: number } }) => {
-    if (info.point.y > 300) { // Ajustar el umbral según sea necesario
-      setBottomSheetState(0); // Cierra el bottom sheet
-    } else if (info.point.y < -300) { // Ajustar el umbral para expandir completamente
-      setBottomSheetState(2); // Expande completamente
-    } else {
-      setBottomSheetState(1); // Vuelve al estado semiabierto
+    if (bottomSheetState === 1) {
+      // Está en 15%, verifica los umbrales de arrastre
+      if (info.point.y < -300) {
+        setBottomSheetState(2); // Expande a y:0
+      } else if (info.point.y > 300) {
+        setBottomSheetState(0); // Cierra
+      }
+    } else if (bottomSheetState === 2) {
+      // Está completamente abierto
+      if (info.point.y > 300 && info.point.y <= 600) {
+        setBottomSheetState(1); // Vuelve al 15%
+      } else if (info.point.y > 600) {
+        setBottomSheetState(0); // Cierra
+      }
     }
   };
 
@@ -157,11 +165,11 @@ const MisionesFiltro: React.FC = () => {
               className="menu fixed z-[61] bottom-0 left-0 w-full h-fit max-h-screen backdrop-blur-xl select-none border-t border-white/10 rounded-t-[40px] overflow-hidden"
               variants={bottomSheetVariants}
               initial="closed"
-              animate={bottomSheetState === 1 ? "semiOpen" : "open"}
+              animate={bottomSheetState === 1 ? "semiOpen" : bottomSheetState === 2 ? "open" : "closed"}
               exit="closed"
               transition={{ ease: 'circOut', duration: 0.3 }}
-              dragConstraints={{ top: 0, bottom: 0 }} // Restricción de movimiento añadida aquí
->
+              dragConstraints={{ top: 0, bottom: 300 }} // Ajuste de las restricciones de movimiento
+            >
               <div className='w-full pt-2 h-full flex justify-center hover:cursor-grab'>
                 <div className='w-10 h-1 rounded-full bg-white/50 text-center'></div>
                </div>
