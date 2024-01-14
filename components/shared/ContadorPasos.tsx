@@ -18,7 +18,7 @@ function ContadorPasos() {
   return (
       <section className='fixed top-4 left-0 w-full h-fit flex justify-center'>
         <div
-        className=" flex rounded-3xl  p-2 justify-between items-center w-fit gap-3 h-12 bg-black/20 backdrop-blur-sm border border-white/10 text-white/70 text-[14px] "
+        className=" flex rounded-3xl  py-2 px-3 justify-between items-center  gap-3 h-12 bg-black/20 backdrop-blur-sm border border-white/10 text-white/70 text-[14px] "
         onClick={toggleMenu}
       >
           <img src='../assets/walk.svg' alt="logo" className="w-full h-full object-contain rounded-full shadow-2xl cursor-pointer" />
