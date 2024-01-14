@@ -10,18 +10,18 @@ interface CategoriaState {
 
 function MisionesFiltro() {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [switchStates, setSwitchStates] = useState<CategoriaState>({ 0: true });
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
-  const toggleSwitch = (index: number) => {
-    setSwitchStates((prevState) => ({
-      ...prevState,
-      [index]: !prevState[index],
-    }));
+  const [misionActiva, setMisionActiva] = useState<number | null>(0);
+
+  // Función para activar una misión
+  const activarMision = (index: number) => {
+    setMisionActiva(index);
   };
+  
 
   const dragConstraints = { top: 0, bottom: 0 }; // Restringe el arrastre verticalmente
 
@@ -59,7 +59,16 @@ function MisionesFiltro() {
               <p className="text-white text-center pt-2 text-[14px] font-medium">Filtrar Misión</p>
               <ul className="grid grid-cols-3 px-4 gap-2 pt-3 font-normal text-[12px] text-white mb-5">
                 {misiones.map((mision, index) => (
-                  <li key={mision.name} className="relative w-full  rounded-2xl overflow-hidden shadow-lg">
+                  <li key={mision.name} 
+                    className="relative w-full  rounded-2xl overflow-hidden shadow-lg" 
+                    onClick={() => activarMision(index)}
+                  >
+                      <div className={`filtrador absolute w-8 h-8  p-[3px] rounded-full transition-all  top-1 left-1 flex justify-center items-center ${misionActiva === index ? 'bg-gradient-to-tr from-red-800 to-yellow-500' : ' border-white/50 border-3'}`}>
+                        <div className={`w-full h-full rounded-full  p-[3px] ${misionActiva === index ? 'bg-white/5 backdrop-blur-3xl' : 'bg-white/50'}`}>
+                          <div className={`${misionActiva === index ? 'w-full h-full rounded-full bg-gradient-to-tr from-red-800 to-yellow-600' : ''}`}></div>
+                        </div>
+                      </div>
+
                       <img src={mision.image} alt="" className='w-full h-28 object-cover' />
                       <div className='absolute w-8 h-8 rounded-full overflow-hidden left-1/2 -translate-x-1/2 -translate-y-[17px] border-[4px] border-[#1C222C]'>
                         <img src={mision.marca} alt="" className='h-full w-full object-cover' />
