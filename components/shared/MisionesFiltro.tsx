@@ -49,7 +49,7 @@ function MisionesFiltro() {
               }}
               className="menu fixed z-[61] bottom-0 left-0 w-full h-fit max-h-screen backdrop-blur-xl select-none border-t border-white/10 rounded-t-[40px] overflow-hidden"
               initial={{ y: '100%' }}
-              animate={{ y: '20%' }}
+              animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ ease: 'circOut', duration: 0.2 }}
             >
@@ -59,9 +59,9 @@ function MisionesFiltro() {
               <p className="text-white text-center pt-2 text-[14px] font-medium">Filtrar Misión</p>
               <ul className="grid grid-cols-3 px-4 gap-2 pt-3 font-normal text-[12px] text-white mb-5">
                 {misiones.map((mision, index) => (
-                  <li key={mision.name} className="w-full  rounded-lg overflow-hidden">
+                  <li key={mision.name} className="w-full  rounded-2xl overflow-hidden">
                       <img src={mision.image} alt="" className='w-full h-28 object-cover' />
-                      <div className='h-fit bg-black/50 flex items-center justify-center text-center'>
+                      <div className='h-fit bg-[#1C222C] flex items-center justify-center text-center'>
                         <span className='text-[9px] mt-4 mb-2'>{mision.name}</span>
                       </div>
                   </li>

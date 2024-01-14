@@ -52,7 +52,7 @@ function Categorias({ imgUrl }: Props) {
               }}
               className="menu fixed z-[61] bottom-0 left-0 w-full h-fit backdrop-blur-xl select-none border-t border-white/10 rounded-t-[40px] overflow-hidden"
               initial={{ y: '100%' }}
-              animate={{ y: '10%' }}
+              animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ ease: 'circOut', duration: 0.2 }}
             >
