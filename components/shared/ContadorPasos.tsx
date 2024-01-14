@@ -21,11 +21,15 @@ function ContadorPasos() {
         className=" flex rounded-3xl  py-2 px-3 justify-between items-center  gap-3 h-12 bg-black/20 backdrop-blur-sm border border-white/10 text-white/70 text-[14px] "
         onClick={toggleMenu}
       >
-          <img src='../assets/walk.svg' alt="logo" className="w-full h-full object-contain rounded-full shadow-2xl cursor-pointer" />
-          <p>4326</p>
+          <div className='w-full h-full flex items-center gap-2'>
+            <img src='../assets/walk.svg' alt="logo" className="w-full h-full object-contain rounded-full shadow-2xl cursor-pointer" />
+            <p>4326</p>
+          </div>
 
-          <img src='../assets/cripto.svg' alt="logo" className="w-full h-full object-contain rounded-full shadow-2xl cursor-pointer" />
-          <p>1200</p>
+          <div className='w-full h-full flex items-center gap-2'>
+            <img src='../assets/cripto.svg' alt="logo" className="w-full h-full object-contain rounded-full shadow-2xl cursor-pointer" />
+            <p>1200</p>
+          </div>
       </div>
       </section>
 
