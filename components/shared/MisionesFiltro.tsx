@@ -49,7 +49,7 @@ function MisionesFiltro() {
               }}
               className="menu fixed z-[61] bottom-0 left-0 w-full h-fit max-h-screen backdrop-blur-xl select-none border-t border-white/10 rounded-t-[40px] overflow-hidden"
               initial={{ y: '100%' }}
-              animate={{ y: 0 }}
+              animate={{ y: '20%' }}
               exit={{ y: '100%' }}
               transition={{ ease: 'circOut', duration: 0.2 }}
             >
