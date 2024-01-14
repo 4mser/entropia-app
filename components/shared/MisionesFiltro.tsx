@@ -65,7 +65,7 @@ function MisionesFiltro() {
                   >
                       <div className={`filtrador absolute w-8 h-8  p-[3px] rounded-full transition-all  top-1 left-1 flex justify-center items-center ${misionActiva === index ? 'bg-gradient-to-tr from-red-800 to-yellow-500' : ' border-white/50 border-3'}`}>
                         <div className={`w-full h-full rounded-full  p-[3px] ${misionActiva === index ? 'bg-black/30 backdrop-blur-3xl' : 'bg-white/50'}`}>
-                          <div className={`${misionActiva === index ? 'w-full h-full rounded-full bg-gradient-to-tr from-red-800 to-yellow-600' : ''}`}></div>
+                          <div className={`${misionActiva === index ? 'w-full h-full rounded-full bg-gradient-to-tr from-red-700 to-yellow-500' : ''}`}></div>
                         </div>
                       </div>
 
