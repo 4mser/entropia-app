@@ -183,3 +183,50 @@ export const categorias = [
       icon: '../assets/categories/historia.svg'
   }
 ]
+
+export const misiones = [
+  {
+    name: "Pinda Explorers",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/DALL%C2%B7E+2024-01-13+21.48.24+-+A+naturalist-style+illustration+featuring+a+hummingbird+interacting+with+a+vibrant+and+diverse+ecosystem+of+fruits+and+plants.+The+scene+includes+mand.png",
+  },
+  {
+    name: "PsyQuesters",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/DALL%C2%B7E+2024-01-13+22.09.39+-+Create+a+vertical+panoramic+image+of+a+photorealistic+human+brain+floating+above+a+realistic+human+hand+with+five+fingers.+The+hand+should+be+more+rot.png"
+  },
+  {
+    name: "Flota Acuática",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/taxisolar.png"
+  },
+  {
+    name: "Amanitas",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/amanita.png"
+  },
+  {
+    name: "Mitología Cervecera",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/ninfa.png"
+  },
+  {
+    name: "Polinizadoras",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/colmena.png"
+  },
+  {
+    name: "Limpieza de Playa",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/lafken.png"
+  },
+  {
+    name: "Antenas y Reliquias",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/mut.png"
+  },
+  {
+    name: "Colibríes",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/colibriarandano.png"
+  },
+  {
+    name: "Aventuras Micológicas",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/DALL%C2%B7E+2024-01-13+23.32.05+-+Create+an+illustration+that+embodies+the+concept+of+'Mycological+Adventures.'+The+image+should+feature+a+vibrant+and+enchanting+forest+setting%2C+with+a.png"
+  },
+  {
+    name: "Emplumados",
+    image: "https://app-valdi.s3.amazonaws.com/misiones/DALL%C2%B7E+2024-01-13+23.37.58+-+Create+an+illustration+that+embodies+the+concept+of+'Avian+Adventures+in+a+Forest.'+The+image+should+show+a+dense%2C+lush+forest+with+a+variety+of+birds.png"
+  }
+]

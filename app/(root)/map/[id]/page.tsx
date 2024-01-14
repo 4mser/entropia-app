@@ -1,5 +1,6 @@
 import Categorias from "@/components/shared/Categorias";
 import Maps from "@/components/shared/Maps"
+import MisionesFiltro from "@/components/shared/MisionesFiltro";
 import UserPic from "@/components/shared/userPic"
 import { fetchUser } from "@/lib/actions/user.actions";
 
@@ -19,9 +20,9 @@ async function Page({ params }: { params: { id: string } }) {
 
         <Categorias 
           imgUrl={'../assets/categories/todo.svg'}
-          name={'categorias'}
-          username={'categorias'}
         />
+
+        <MisionesFiltro />
 
         <UserPic 
           imgUrl={userInfo.image}
