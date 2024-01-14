@@ -22,7 +22,7 @@ function ContadorPasos() {
         onClick={toggleMenu}
       >
           <img src='../assets/walk.svg' alt="logo" className="w-full h-full object-contain rounded-full shadow-2xl cursor-pointer" />
-          <p>5326</p>
+          <p>4326</p>
 
           <img src='../assets/cripto.svg' alt="logo" className="w-full h-full object-contain rounded-full shadow-2xl cursor-pointer" />
           <p>1200</p>
