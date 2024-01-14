@@ -46,7 +46,7 @@ function Categorias({ imgUrl }: Props) {
               drag="y"
               dragConstraints={dragConstraints}
               onDragEnd={(event, info) => {
-                if (info.point.y > 300) { // Cambiar '300' por el umbral deseado
+                if (info.point.y > 400) { // Cambiar '300' por el umbral deseado
                   toggleMenu();
                 }
               }}

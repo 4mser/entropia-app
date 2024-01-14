@@ -28,11 +28,11 @@ function MisionesFiltro() {
   return (
     <section className="md:hidden">
       <div
-        className="fixed md:absolute top-[4.5rem] right-4 rounded-full flex flex-col p-[2px] justify-center items-center w-12 h-12 overflow-hidden bg-gradient-to-tr from-blue to-green-700 backdrop-blur-sm"
+        className="fixed md:absolute top-[4.5rem] right-4 rounded-full flex flex-col p-[2px] justify-center items-center w-12 h-12 overflow-hidden bg-gradient-to-tr from-red-800 to-yellow-600 backdrop-blur-sm"
         onClick={toggleMenu}
       >
         <div className="rounded-full w-full h-full bg-glassmorphism flex justify-center p-1 items-center">
-          <img src="../images/1.png" alt="mision" className="w-full h-full object-cover rounded-full shadow-2xl cursor-pointer" />
+          <img src="https://app-valdi.s3.amazonaws.com/misiones/DALL%C2%B7E+2024-01-13+21.48.24+-+A+naturalist-style+illustration+featuring+a+hummingbird+interacting+with+a+vibrant+and+diverse+ecosystem+of+fruits+and+plants.+The+scene+includes+mand.png" alt="mision" className="w-full h-full object-cover rounded-full shadow-2xl cursor-pointer" />
         </div>
       </div>
 
@@ -43,11 +43,11 @@ function MisionesFiltro() {
               drag="y"
               dragConstraints={dragConstraints}
               onDragEnd={(event, info) => {
-                if (info.point.y > 300) { // Cambiar '300' por el umbral deseado
+                if (info.point.y > 400) { // Cambiar '300' por el umbral deseado
                   toggleMenu();
                 }
               }}
-              className="menu fixed z-[61] bottom-0 left-0 w-full h-fit backdrop-blur-xl select-none border-t border-white/10 rounded-t-[40px] overflow-hidden"
+              className="menu fixed z-[61] bottom-0 left-0 w-full h-fit max-h-screen backdrop-blur-xl select-none border-t border-white/10 rounded-t-[40px] overflow-hidden"
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
@@ -59,8 +59,11 @@ function MisionesFiltro() {
               <p className="text-white text-center pt-2 text-[14px] font-medium">Filtrar Misión</p>
               <ul className="grid grid-cols-3 px-4 gap-2 pt-3 font-normal text-[12px] text-white mb-5">
                 {misiones.map((mision, index) => (
-                  <li key={mision.name} className="w-full h-32 rounded-lg overflow-hidden">
-                      <img src={mision.image} alt="" className='w-full h-full object-cover' />
+                  <li key={mision.name} className="w-full  rounded-lg overflow-hidden">
+                      <img src={mision.image} alt="" className='w-full h-32 object-cover' />
+                      <div className='h-fit bg-black/50 flex items-center justify-center text-center'>
+                        <span className='mt-4 mb-2'>{mision.name}</span>
+                      </div>
                   </li>
                   ))}
               </ul>
