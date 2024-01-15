@@ -26,7 +26,7 @@ function Categorias({ imgUrl }: Props) {
     }));
   };
 
-  const dragConstraints = { top: 0, bottom: 0 }; // Restringe el arrastre verticalmente
+  const dragConstraints = { top: 0, bottom: '10%' }; // Restringe el arrastre verticalmente
 
   return (
     <section className="md:hidden">
@@ -50,11 +50,11 @@ function Categorias({ imgUrl }: Props) {
                   toggleMenu();
                 }
               }}
-              className="menu fixed z-[61] bottom-0 left-0 w-full h-fit backdrop-blur-xl select-none border-t border-white/10 rounded-t-[40px] overflow-hidden"
+              className="menu fixed z-[61] bottom-0 left-0 pb-16 w-full h-fit backdrop-blur-xl select-none border-t border-white/10 rounded-t-[40px] overflow-hidden"
               initial={{ y: '100%' }}
-              animate={{ y: 0 }}
+              animate={{ y: '10%' }}
               exit={{ y: '100%' }}
-              transition={{ ease: 'circOut', duration: 0.2 }}
+              transition={{ ease: 'backOut', duration: 0.5 }}
             >
                <div className='w-full pt-2 h-full flex justify-center hover:cursor-grab'>
                 <div className='w-10 h-1 rounded-full bg-white/50 text-center'></div>
