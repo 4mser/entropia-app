@@ -21,10 +21,10 @@ function ContadorPasos() {
         >
             <div className='flex items-center h-7 gap-3 '>
               <img src='../assets/walk.svg' alt="logo" className="h-full object-contain " />
-              <p>24</p>
+              <p>12024</p>
 
               <img src='../assets/cripto.svg' alt="logo" className="  h-full object-contain " />
-              <p>12</p>
+              <p>120</p>
             </div>
             
             <AnimatePresence>
@@ -33,8 +33,8 @@ function ContadorPasos() {
                   className='overflow-hidden'
                   initial={{ height: '0' }}
                   animate={{ height: 'auto' }}
-                  exit={{ height: '0' }}
-                  transition={{ ease: 'circOut', duration: 0.2 }}
+                  exit={{ height: 0 }}
+                  transition={{ ease: 'backInOut', duration: 0.2 }}
                 >
                   <img src="../images/grafico.png" alt="" />
                 </motion.div>
