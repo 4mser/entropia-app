@@ -26,7 +26,7 @@ function Categorias({ imgUrl }: Props) {
     }));
   };
 
-  const dragConstraints = { top: 0, bottom: '10%' }; // Restringe el arrastre verticalmente
+  const dragConstraints = { top: 0, bottom: 0 }; // Restringe el arrastre verticalmente
 
   return (
     <section className="md:hidden">
@@ -54,7 +54,7 @@ function Categorias({ imgUrl }: Props) {
               initial={{ y: '100%' }}
               animate={{ y: '10%' }}
               exit={{ y: '100%' }}
-              transition={{ ease: 'backOut', duration: 0.5 }}
+              transition={{ ease: 'anticipate', duration: 0.5 }}
             >
                <div className='w-full pt-2 h-full flex justify-center hover:cursor-grab'>
                 <div className='w-10 h-1 rounded-full bg-white/50 text-center'></div>

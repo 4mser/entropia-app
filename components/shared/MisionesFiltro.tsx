@@ -55,7 +55,7 @@ function MisionesFiltro() {
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
-              transition={{ ease: 'circOut', duration: 0.2 }}
+              transition={{ ease: 'anticipate', duration: 0.5 }}
             >
                <div className='w-full pt-2 h-full flex justify-center hover:cursor-grab'>
                 <div className='w-10 h-1 rounded-full bg-white/50 text-center'></div>
