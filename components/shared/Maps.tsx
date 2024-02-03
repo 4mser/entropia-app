@@ -25,9 +25,9 @@ function Maps() {
       markerElement.style.backgroundColor = isExplorationRadio
         ? "rgba(76, 211, 193, 0.233)" // Color translúcido para el radio de exploración
         : "#4cd3c1"; // Color verde para la ubicación del usuario
-        if (isExplorationRadio) {
+        /* if (isExplorationRadio) {
             markerElement.style.border = `2px dotted #4cd3c1`; // Ancho del borde y color
-          }
+          } */
       return markerElement;
     },
     []
@@ -83,7 +83,7 @@ function Maps() {
               const metersPerPixel = (156543.03392 * Math.cos(latitude * (Math.PI / 180))) / Math.pow(2, zoomLevel);
               const explorationRadioRadiusInMeters = 270; // Cambia este valor al radio deseado
               const explorationRadioRadiusInPixels = explorationRadioRadiusInMeters / metersPerPixel;
-              const markerSizeInPixels = explorationRadioRadiusInPixels * 0.9; // Multiplica por 2 para el diámetro
+              const markerSizeInPixels = explorationRadioRadiusInPixels * 0.9; // Multiplica el diámetro
 
               explorationRadioMarker.getElement().style.width = `${markerSizeInPixels}px`;
               explorationRadioMarker.getElement().style.height = `${markerSizeInPixels}px`;
