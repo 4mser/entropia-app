@@ -6,7 +6,6 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import puntosPinda from '../../app/(root)/data/puntosPinda'
 import ModalPuntos from "./ModalPuntos";
 
-import { GeoJsonProperties } from 'geojson';
 
 interface ModalInfo {
   isOpen: boolean;
@@ -29,7 +28,6 @@ function Maps() {
 
   const [modalInfo, setModalInfo] = useState<ModalInfo>({ isOpen: false, data: {} });
 
-  const [mapInstance, setMapInstance] = useState(null);
 
   // Función para crear el elemento del marcador
   const createMarkerElement = useCallback(
@@ -80,6 +78,22 @@ function Maps() {
               "icon-size": 0.5,
               "icon-allow-overlap": true,
             },
+          });
+
+          map.addLayer({
+            id: "puntos-texto",
+            type: "symbol",
+            source: "puntosPinda",
+            layout: {
+              "text-field": ["get", "location"],
+              "text-offset": [0, 2.3],
+              "text-anchor": "center",
+              "text-size": 12,
+            },
+            paint: {
+              "text-color": "#eeeeee",
+            },
+            minzoom: 15,
           });
         });
         // Manejar clic en puntos Pinda para abrir el modal y volar hacia el punto

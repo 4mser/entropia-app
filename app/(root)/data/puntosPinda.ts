@@ -108,7 +108,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
     {
       "type": "Feature",
       "properties": {
-        "location": "HUAIRAVO",
+        "location": "EL HUAIRAVO",
         "boro_name": "VALDIVIA",
         "street": "VELASQUEZ COBARRUBIAS 260",
         "neighborhood": "NIEBLA"

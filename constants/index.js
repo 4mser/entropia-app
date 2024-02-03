@@ -93,7 +93,7 @@ export const bottombarLinks = [
   {
     imgURL: "/assets/tienda.svg",
     route: "/store",
-    label: "Tienda",
+    label: "Tiendas",
   },
 ];
 
