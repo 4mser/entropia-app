@@ -34,12 +34,12 @@ export default function RootLayout({
         baseTheme: dark,
       }}
     >
-      <html lang='en'>
+      <html lang='en' >
         <head>
           <meta property="og:image" content="https://app-valdi.s3.amazonaws.com/instagram-12.png" />
           <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
         </head>
-        <body className={`${inter.className} xl:px-[8%] 2xl:px-[15%] bg-dark-1 min-h-screen` }>
+        <body className={`${inter.className} xl:px-[8%] 2xl:px-[15%] bg-dark-1 min-h-[100dvh]` }>
           {/* <Topbar /> */}
 
           <main className='flex flex-row'> 
