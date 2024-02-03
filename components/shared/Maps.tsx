@@ -10,7 +10,13 @@ import { GeoJsonProperties } from 'geojson';
 
 interface ModalInfo {
   isOpen: boolean;
-  data: GeoJsonProperties | null;
+  data: {
+    location?: string;
+    street?: string;
+    neighborhood?: string;
+    boro_name?: string;
+    image?: string;
+  };
 }
 
 
@@ -21,7 +27,7 @@ function Maps() {
   const [userLocation, setUserLocation] = useState<LngLatLike | null>(null);
   const markerRef = useRef<Marker | null>(null);
 
-  const [modalInfo, setModalInfo] = useState<ModalInfo>({ isOpen: false, data: null });
+  const [modalInfo, setModalInfo] = useState<ModalInfo>({ isOpen: false, data: {} });
 
   const [mapInstance, setMapInstance] = useState(null);
 
@@ -88,8 +94,18 @@ function Maps() {
         if (feature.geometry.type === "Point") {
           const coordinates = feature.geometry.coordinates as [number, number]; // Asegura el tipo correcto
           
+
+          // Transforma GeoJsonProperties a la estructura esperada por ModalPuntos
+          const modalData = {
+            location: feature.properties?.location || "",
+            street: feature.properties?.street || "",
+            neighborhood: feature.properties?.neighborhood || "",
+            boro_name: feature.properties?.boro_name || "",
+            image: feature.properties?.image || ""
+          };
+
           // Establece la información del modal para mostrarla
-          setModalInfo({ isOpen: true, data: feature.properties });
+          setModalInfo({ isOpen: true, data: modalData });
       
           // Anima el mapa hacia las coordenadas del punto seleccionado
           map.flyTo({
@@ -118,7 +134,7 @@ function Maps() {
   }, [map]);
 
   // Función para cerrar el modal
-  const handleCloseModal = () => setModalInfo({ isOpen: false, data: null });
+  const handleCloseModal = () => setModalInfo({ isOpen: false, data: {} });
 
 
   // Función para centrar el mapa en la ubicación del usuario
