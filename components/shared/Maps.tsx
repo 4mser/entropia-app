@@ -4,6 +4,15 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import mapboxgl, { LngLatLike, Marker } from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import puntosPinda from '../../app/(root)/data/puntosPinda'
+import ModalPuntos from "./ModalPuntos";
+
+import { GeoJsonProperties } from 'geojson';
+
+interface ModalInfo {
+  isOpen: boolean;
+  data: GeoJsonProperties | null;
+}
+
 
 function Maps() {
   // Estado y referencias
@@ -12,7 +21,8 @@ function Maps() {
   const [userLocation, setUserLocation] = useState<LngLatLike | null>(null);
   const markerRef = useRef<Marker | null>(null);
 
-  const [modalInfo, setModalInfo] = useState({ isOpen: false, data: null });
+  const [modalInfo, setModalInfo] = useState<ModalInfo>({ isOpen: false, data: null });
+
   const [mapInstance, setMapInstance] = useState(null);
 
   // Función para crear el elemento del marcador
@@ -66,9 +76,50 @@ function Maps() {
             },
           });
         });
+        // Manejar clic en puntos Pinda para abrir el modal y volar hacia el punto
+      map.on("click", "puntos-iconos", (e) => {
+        if (!e.features || e.features.length === 0) {
+          console.error('No features present');
+          return; // Salir de la función si no hay características disponibles
+        }
+
+        const feature = e.features[0];
+
+        if (feature.geometry.type === "Point") {
+          const coordinates = feature.geometry.coordinates as [number, number]; // Asegura el tipo correcto
+          
+          // Establece la información del modal para mostrarla
+          setModalInfo({ isOpen: true, data: feature.properties });
+      
+          // Anima el mapa hacia las coordenadas del punto seleccionado
+          map.flyTo({
+            center: coordinates,
+            zoom: 17,
+            pitch: 60,
+            bearing: -25,
+            essential: true,
+          });
+        } else {
+          console.error('Unsupported geometry type for this operation');
+        }
+      });
+
+      // Cambia el cursor al pasar sobre un punto Pinda
+      map.on("mouseenter", "puntos-iconos", () => {
+        map.getCanvas().style.cursor = 'pointer';
+      });
+      map.on("mouseleave", "puntos-iconos", () => {
+        map.getCanvas().style.cursor = '';
+      });
+
+        
       });
     }
   }, [map]);
+
+  // Función para cerrar el modal
+  const handleCloseModal = () => setModalInfo({ isOpen: false, data: null });
+
 
   // Función para centrar el mapa en la ubicación del usuario
   const centerMapOnUserLocation = () => {
@@ -176,6 +227,8 @@ function Maps() {
   return (
     <section>
       <div ref={mapNode} style={{ width: "100%", height: "100vh" }} />
+      {/* <ModalPuntos isOpen={modalInfo.isOpen} onClose={handleCloseModal} data={modalInfo.data} /> */}
+      <ModalPuntos isOpen={modalInfo.isOpen} onClose={handleCloseModal} data={modalInfo.data} />
       <button onClick={centerMapOnUserLocation} className="fixed md:absolute z-50 right-4 bottom-32 lg:bottom-28 bg-black/50  flex justify-center items-center w-9 h-9 rounded-full p-1.5">
         <img src="../assets/map-icons/gps.svg" alt="" className="w-full h-full rotate-45 opacity-80" />
       </button>
