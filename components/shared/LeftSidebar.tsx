@@ -8,6 +8,7 @@ import { sidebarLinks } from "@/constants";
 import { useEffect, useState } from "react";
 
 const LeftSidebar = () => {
+  
   const router = useRouter();
   const pathname = usePathname();
 
@@ -61,6 +62,7 @@ const LeftSidebar = () => {
             pathname === link.route;
 
           if (link.route === "/profile") link.route = `${link.route}/${userId}`;
+          if (link.route === "/map") link.route = `${link.route}/${userId}`;
 
           return (
             <Link

@@ -40,40 +40,23 @@ function ProfileHeader({
               <p className='text-small-medium text-gray-1'>@{username}</p>
             </div>
 
-            {accountId === authUserId && type !== "Community" && (
-              <Link href="/profile/edit" className="text-white text-[12px] bg-dark-4 h-fit  px-4 py-1 rounded-md border border-white/0 hover:border-white/20 transition-all ">Editar perfil</Link>
-            )}
+            <div className="flex flex-col gap-2 absolute right-5">
+              {accountId === authUserId && type !== "Community" && (
+                <Link href="/profile/edit" className="text-white text-[12px] bg-dark-4 h-fit  px-4 py-1 rounded-md border border-white/0 hover:border-white/20 transition-all ">Editar perfil</Link>
+              )}
+              {accountId === authUserId && type !== "Community" && (
+                <SignedIn>
+                  <SignOutButton>
+                    <div className="text-white text-[12px] cursor-pointer bg-dark-1 hover:bg-red-900 h-fit  px-4 py-1 rounded-md border hover:border-white/0 border-white/20 transition-all ">Cerrar sesión</div>
+                  </SignOutButton>
+                </SignedIn>
+                )
+              }
+            </div>
           </div>
           
         </div>
-        {/* {accountId === authUserId && type !== "Community" && (
-          <div className="flex flex-col items-center gap-2">
-            <Link href='/profile/edit' className="opacity-70 hover:opacity-100">
-              <img
-                src='/assets/pen.svg'
-                alt='logout'
-                width={24}
-                height={24}
-              />
-            </Link>
-
-            <div className='block md:hidden'>
-              <SignedIn>
-                <SignOutButton>
-                  <div className='flex cursor-pointer opacity-80 hover:opacity-100'>
-                    <img
-                      src='/assets/logout.svg'
-                      alt='logout'
-                      width={24}
-                      height={24}
-                    />
-                  </div>
-                </SignOutButton>
-              </SignedIn>
-            </div> 
-          
-          </div>
-        )} */}
+        
       </div>
 
       <p className='mt-6 max-w-lg text-[14px] text-light-2'>{bio}</p>
