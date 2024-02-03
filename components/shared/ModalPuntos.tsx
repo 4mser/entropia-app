@@ -31,7 +31,7 @@ const ModalPuntos: React.FC<ModalPuntosProps> = ({ isOpen, onClose, data }) => {
                 onClose();
               }
             }}
-            className="menu  z-[61]   w-full h-fit backdrop-blur-md select-none border-b-medium  border-white/10 shadow-xl rounded-[20px] overflow-hidden"
+            className="menu  z-[61]   w-full h-fit backdrop-blur-md select-none border-b  border-white/10 shadow-xl rounded-[20px] overflow-hidden"
             initial={{ y: "50%" }}
             animate={{ y: 0 }}
             exit={{ y: "50%" }}
