@@ -31,10 +31,10 @@ const ModalPuntos: React.FC<ModalPuntosProps> = ({ isOpen, onClose, data }) => {
                 onClose();
               }
             }}
-            className="menu  z-[61]   w-full h-fit backdrop-blur-md select-none border-b  border-white/10 shadow-xl rounded-[20px] overflow-hidden"
-            initial={{ y: "50%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "50%" }}
+            className="menu  z-[61]   w-full h-fit backdrop-blur-md select-none   border-b  border-white/10 shadow-xl rounded-[20px] overflow-hidden"
+            initial={{ y: "50%", opacity:0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "50%", opacity:0 }}
             transition={{ ease: "anticipate", duration: 0.5 }}
           >
             <div className="w-full pt-2 h-full flex justify-center hover:cursor-grab">
