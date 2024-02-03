@@ -126,7 +126,7 @@ function Maps() {
             center: coordinates,
             zoom: 17,
             pitch: 60,
-            bearing: -25,
+            // bearing: -25,
             essential: true,
           });
         } else {
