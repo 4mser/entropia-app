@@ -21,7 +21,7 @@ const ModalPuntos: React.FC<ModalPuntosProps> = ({ isOpen, onClose, data }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div className="fixed top-0 left-0 z-[60] w-full h-screen ">
+        <motion.div className="fixed top-0 left-0 z-[60] w-full min-h-[100dvh] flex items-center justify-center p-8">
           <motion.div
             drag="y"
             dragConstraints={dragConstraints}
@@ -31,10 +31,10 @@ const ModalPuntos: React.FC<ModalPuntosProps> = ({ isOpen, onClose, data }) => {
                 onClose();
               }
             }}
-            className="menu fixed z-[61] bottom-0 left-0  w-full h-fit backdrop-blur-md select-none border-t border-white/10 shadow-xl rounded-t-[40px] overflow-hidden"
-            initial={{ y: "100%" }}
+            className="menu  z-[61]   w-full h-fit backdrop-blur-md select-none border-t border-white/10 shadow-xl rounded-[20px] overflow-hidden"
+            initial={{ y: "50%" }}
             animate={{ y: 0 }}
-            exit={{ y: "100%" }}
+            exit={{ y: "50%" }}
             transition={{ ease: "anticipate", duration: 0.5 }}
           >
             <div className="w-full pt-2 h-full flex justify-center hover:cursor-grab">
@@ -43,7 +43,7 @@ const ModalPuntos: React.FC<ModalPuntosProps> = ({ isOpen, onClose, data }) => {
             <p className="text-white text-center pt-2 text-[14px] font-medium">
               {data?.location}
             </p>
-            <div className="flex items-center flex-col mb-16 px-7">
+            <div className="flex items-center flex-col mb-7 px-7">
               <p className="font-normal text-[11px] pt-1 text-white/70">
                 {data?.street} - {data?.neighborhood}, {data?.boro_name}
               </p>
@@ -51,7 +51,7 @@ const ModalPuntos: React.FC<ModalPuntosProps> = ({ isOpen, onClose, data }) => {
             </div>
           </motion.div>
           <motion.div
-            className="w-full h-screen fixed z-[48] left-0 top-0 select-none"
+            className="w-full h-screen fixed z-[48] left-0 top-0 select-none backdrop-blur-[3px]"
             onClick={onClose}
           ></motion.div>
         </motion.div>
