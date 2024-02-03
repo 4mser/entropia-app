@@ -18,6 +18,32 @@ const ModalPuntos: React.FC<ModalPuntosProps> = ({ isOpen, onClose, data }) => {
   if (!isOpen) return null;
   const dragConstraints = { top: 0, bottom: 0 }; // Restringe el arrastre verticalmente
 
+  const menuVariants = {
+    open: {
+      opacity: 1,
+      x: 0,
+      backdropFilter: "blur(10px)",
+      transition: {
+        type: "tween",
+        duration: 0.3,
+      },
+    },
+    closed: {
+      opacity: 0,
+      x: "-100%",
+      backdropFilter: "blur(0px)",
+      transition: {
+        type: "tween",
+        duration: 0.3,
+      },
+    },
+  };
+
+  const backdropVariants = {
+    open: { opacity: 1, transition: { duration: 0.3 } },
+    closed: { opacity: 0, transition: { duration: 0.3 } },
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -51,10 +77,11 @@ const ModalPuntos: React.FC<ModalPuntosProps> = ({ isOpen, onClose, data }) => {
             </div>
           </motion.div>
           <motion.div
-            className="w-full h-screen fixed z-[48] left-0 top-0 select-none"
-            initial={{ backdropFilter: 'blur(0px)' }}
-            animate={{ backdropFilter: 'blur(4px)' }}
-            exit={{ backdropFilter: 'blur(0px)' }}
+            className="w-full h-screen fixed z-[48] left-0 top-0 select-none backdrop-blur-sm"
+            initial="closed"
+          animate="open"
+          exit="closed"
+            variants={backdropVariants}
             onClick={onClose}
           ></motion.div>
         </motion.div>
