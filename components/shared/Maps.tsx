@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import mapboxgl, { LngLatLike, Marker } from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import puntosPinda from '../../app/(root)/data/puntosPinda.ts'
 
 function Maps() {
   // Estado y referencias
@@ -10,6 +11,9 @@ function Maps() {
   const mapNode = useRef<HTMLDivElement | null>(null);
   const [userLocation, setUserLocation] = useState<LngLatLike | null>(null);
   const markerRef = useRef<Marker | null>(null);
+
+  const [modalInfo, setModalInfo] = useState({ isOpen: false, data: null });
+  const [mapInstance, setMapInstance] = useState(null);
 
   // Función para crear el elemento del marcador
   const createMarkerElement = useCallback(
@@ -32,6 +36,39 @@ function Maps() {
     },
     []
   );
+
+  useEffect(() => {
+    if (map) {
+      map.on("load", () => {
+        map.loadImage("/images/pinda/logoPinda.png", (error, image) => {
+          if (error) throw error;
+
+          // Verifica si 'image' es undefined antes de proceder
+          if (image === undefined) {
+            console.error('La imagen no se pudo cargar');
+            return; // Salir de la función si la imagen no está disponible
+          }
+          map.addImage("custom-icon", image);
+
+          map.addSource("puntosPinda", {
+            type: "geojson",
+            data: puntosPinda,
+          });
+
+          map.addLayer({
+            id: "puntos-iconos",
+            type: "symbol",
+            source: "puntosPinda",
+            layout: {
+              "icon-image": "custom-icon",
+              "icon-size": 0.5,
+              "icon-allow-overlap": true,
+            },
+          });
+        });
+      });
+    }
+  }, [map]);
 
   // Función para centrar el mapa en la ubicación del usuario
   const centerMapOnUserLocation = () => {
@@ -78,6 +115,9 @@ function Maps() {
             const userLocationMarker = markerRef.current;
             const explorationRadioMarker = markerRef.current;
 
+            
+
+
             if (userLocationMarker && explorationRadioMarker) {
               const zoomLevel = mapboxMap.getZoom();
               const metersPerPixel = (156543.03392 * Math.cos(latitude * (Math.PI / 180))) / Math.pow(2, zoomLevel);
@@ -88,6 +128,8 @@ function Maps() {
               explorationRadioMarker.getElement().style.width = `${markerSizeInPixels}px`;
               explorationRadioMarker.getElement().style.height = `${markerSizeInPixels}px`;
             }
+
+            
           });
         });
 
