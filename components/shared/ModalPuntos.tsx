@@ -51,7 +51,10 @@ const ModalPuntos: React.FC<ModalPuntosProps> = ({ isOpen, onClose, data }) => {
             </div>
           </motion.div>
           <motion.div
-            className="w-full h-screen fixed z-[48] left-0 top-0 select-none backdrop-blur-[3px]"
+            className="w-full h-screen fixed z-[48] left-0 top-0 select-none"
+            initial={{ backdropFilter: 'blur(0px)' }}
+            animate={{ backdropFilter: 'blur(4px)' }}
+            exit={{ backdropFilter: 'blur(0px)' }}
             onClick={onClose}
           ></motion.div>
         </motion.div>
