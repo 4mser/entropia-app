@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import mapboxgl, { LngLatLike, Marker } from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import puntosPinda from '../../app/(root)/data/puntosPinda.ts'
+import puntosPinda from '../../app/(root)/data/puntosPinda'
 
 function Maps() {
   // Estado y referencias
