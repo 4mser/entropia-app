@@ -10,7 +10,7 @@ async function Page({ params }: { params: { id: string } }) {
   const userInfo = await fetchUser(params.id);
 
   return (
-    <section className="w-full h-full overflow-hidden relative">
+    <section className="w-full h-[100dvh] overflow-hidden relative">
         <Maps />
         <ContadorPasos />
 

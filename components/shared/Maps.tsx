@@ -255,8 +255,8 @@ function Maps() {
 
   // Renderizar el contenedor del mapa
   return (
-    <section>
-      <div ref={mapNode} style={{ width: "100%", height: "100vh" }} />
+    <section className="max-h-[100dvh] overflow-hidden">
+      <div ref={mapNode} style={{ width: "100%", height: "100dvh" }} />
       {/* <ModalPuntos isOpen={modalInfo.isOpen} onClose={handleCloseModal} data={modalInfo.data} /> */}
       <ModalPuntos isOpen={modalInfo.isOpen} onClose={handleCloseModal} data={modalInfo.data} />
       <button onClick={centerMapOnUserLocation} className="fixed md:absolute z-50 right-4 bottom-32 lg:bottom-28 bg-black/50  flex justify-center items-center w-9 h-9 rounded-full p-1.5">
