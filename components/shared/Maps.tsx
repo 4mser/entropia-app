@@ -41,8 +41,8 @@ function Maps() {
       markerElement.style.height = `${markerSize}px`;
       markerElement.style.borderRadius = "50%";
       markerElement.style.backgroundColor = isExplorationRadio
-        ? "rgba(76, 211, 193, 0.233)" // Color translúcido para el radio de exploración
-        : "#4cd3c1"; // Color verde para la ubicación del usuario
+        ? "rgba(211, 202, 76, 0.233)" // Color translúcido para el radio de exploración
+        : "#DD981D"; // Color verde para la ubicación del usuario
         /* if (isExplorationRadio) {
             markerElement.style.border = `2px dotted #4cd3c1`; // Ancho del borde y color
           } */
