@@ -226,7 +226,7 @@ export const misiones = [
     marca: "https://app-valdi.s3.amazonaws.com/marcas/mut+(1).png"
   },
   {
-    name: "Colibríes",
+    name: "Puntos de venta Pinda",
     image: "https://app-valdi.s3.amazonaws.com/misiones/colibriarandano.png",
     marca: "https://app-valdi.s3.amazonaws.com/marcas/Captura+de+pantalla+2023-12-21+230427.png"
   },

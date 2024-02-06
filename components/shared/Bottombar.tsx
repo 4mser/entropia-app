@@ -28,7 +28,7 @@ function Bottombar() {
               key={link.label}
               className={`bottombar_link w-16 ${isActive ? "opacity-100" : "opacity-70"}`}
             >
-              <div className={`h-1  absolute top-0 bg-gradient-to-tr rounded-full from-blue to-green-700 shadow-custom transition-all duration-300 ease-in-out ${pathname !== link.route ? 'w-0 ' : 'w-full'}`} />
+              <div className={`h-1  absolute top-0 bg-gradient-to-tr rounded-full from-amber-500 to-amber-800 shadow-custom-2 transition-all duration-300 ease-in-out ${pathname !== link.route ? 'w-0 ' : 'w-full'}`} />
               <img
                 src={link.imgURL}
                 alt={link.label}

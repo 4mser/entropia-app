@@ -20,7 +20,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "AVL PASTELERIA",
         "boro_name": "SAN JOSE",
         "street": "CALLE MARIQUINA 106",
-        "neighborhood": "SAN JOSE"
+        "neighborhood": "SAN JOSE",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -33,7 +35,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "BOTILLERIA PUNTO CLAVE",
         "boro_name": "SAN JOSE",
         "street": "CALLE MARIQUINA 1620",
-        "neighborhood": "SAN JOSE"
+        "neighborhood": "SAN JOSE",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -46,7 +50,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "CERVECERIA PANCUL",
         "boro_name": "SAN JOSE",
         "street": "km 828 ruta 5 sur lo lagos 5170000",
-        "neighborhood": "SAN JOSE"
+        "neighborhood": "SAN JOSE",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -59,7 +65,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "ELFO DEL BOSQUE",
         "boro_name": "VALDIVIA",
         "street": "INFANTA ELENA 3590",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -72,7 +80,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "CAFE LA PIEDRA",
         "boro_name": "VALDIVIA",
         "street": "AV RAMON PICARTE 811",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -85,7 +95,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "NATURAL IC",
         "boro_name": "VALDIVIA",
         "street": "AV ITALIA 1721",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -98,7 +110,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "SABOR A VERDE",
         "boro_name": "VALDIVIA",
         "street": "CAMILO HENRIQUEZ 822 824",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -111,7 +125,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "EL HUAIRAVO",
         "boro_name": "VALDIVIA",
         "street": "VELASQUEZ COBARRUBIAS 260",
-        "neighborhood": "NIEBLA"
+        "neighborhood": "NIEBLA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -124,7 +140,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "EX FABRICA",
         "boro_name": "VALDIVIA",
         "street": "Guillermo Frick 270",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -137,7 +155,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "MERCADO LOCAL",
         "boro_name": "VILLARRICA",
         "street": "CAM 2DA FAJA LT 6 LONCOTRARO ALTO",
-        "neighborhood": "VILLARRICA"
+        "neighborhood": "VILLARRICA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -150,7 +170,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "LA COLMENA NIEBLA",
         "boro_name": "VALDIVIA",
         "street": "DEL CASTILLO 1125",
-        "neighborhood": "NIEBLA"
+        "neighborhood": "NIEBLA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -163,7 +185,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "APRENDIZ PANADERIA",
         "boro_name": "VALDIVIA",
         "street": "ANIBAL PINTO 1965",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -176,7 +200,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "LA COSTANERA MAFIL",
         "boro_name": "MAFIL",
         "street": "CAROL URZUA 270",
-        "neighborhood": "MAFIL"
+        "neighborhood": "MAFIL",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -189,7 +215,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "450",
         "boro_name": "VALDIVIA",
         "street": "LOS ALERCES 20",
-        "neighborhood": "ISLA TEJA"
+        "neighborhood": "ISLA TEJA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -202,7 +230,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "PANAKA CAFE",
         "boro_name": "VALDIVIA",
         "street": "LOS LAURELES 212",
-        "neighborhood": "ISLA TEJA"
+        "neighborhood": "ISLA TEJA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -216,7 +246,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "LOS ROBLES 075",
         "neighborhood": "ISLA TEJA",
-        "image": "https://media-cdn.tripadvisor.com/media/photo-s/1a/b8/b0/8c/mia-bar.jpg"
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/1a/b8/b0/8c/mia-bar.jpg",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -230,7 +262,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "KM 25 NORTE, CAYUMAPU",
         "neighborhood": "ISLA TEJA",
-        "image": "https://tiemporeal.periodismoudec.cl/wp-content/uploads/2022/04/Bundor-765x496.png"
+        "image": "https://tiemporeal.periodismoudec.cl/wp-content/uploads/2022/04/Bundor-765x496.png",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -244,7 +278,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "LOS ROBLES 500",
         "neighborhood": "ISLA TEJA",
-        "image": "https://th.bing.com/th/id/OIP.kMM0VHmfxr64by8cCbxNWQHaHY?rs=1&pid=ImgDetMain"
+        "image": "https://th.bing.com/th/id/OIP.kMM0VHmfxr64by8cCbxNWQHaHY?rs=1&pid=ImgDetMain",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -257,7 +293,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "BOTILLERIA EL TORREON",
         "boro_name": "VALDIVIA",
         "street": "COCHRANE 215",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -270,7 +308,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "CAFE BOGADOR",
         "boro_name": "VALDIVIA",
         "street": "GENERAL LAGOS 1089",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -283,7 +323,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "ENKI VEGAN",
         "boro_name": "VALDIVIA",
         "street": "O'HIGGINS 374",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -296,7 +338,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "BOTILLERIA C Y C",
         "boro_name": "VALDIVIA",
         "street": "HOLZAPFEL 582",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -309,7 +353,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "CAFE DIAS LIBRES",
         "boro_name": "CHOSHUENCO",
         "street": "INDEPENDENCIA #4",
-        "neighborhood": "CHOSHUENCO"
+        "neighborhood": "CHOSHUENCO",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -322,7 +368,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "DEL CERRO VEGAN",
         "boro_name": "VALDIVIA",
         "street": "GARCIA REYES 464",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -335,7 +383,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "SATIVO",
         "boro_name": "PUERTO VARAS",
         "street": "AV LOS COLONOS 1176 LOCAL 8",
-        "neighborhood": "PUERTO VARAS"
+        "neighborhood": "PUERTO VARAS",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -348,7 +398,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "SABROSURA",
         "boro_name": "VALDIVIA",
         "street": "AINIL 535",
-        "neighborhood": "ISLA TEJA"
+        "neighborhood": "ISLA TEJA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -361,7 +413,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "BARBUDO GROWLER",
         "boro_name": "VALDIVIA",
         "street": "BEAUCHEF 641",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -374,7 +428,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "MIGAS DEL CHUCAO",
         "boro_name": "VALDIVIA",
         "street": "CAUPOLICAN 270",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -387,7 +443,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "CASA DEL QUESO",
         "boro_name": "VALDIVIA",
         "street": "KM 25 NORTE,CAYUMAPU",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -400,7 +458,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "SILOS TOROBAYO",
         "boro_name": "VALDIVIA",
         "street": "RUTA T 350 1999 SILOS DE TOROBAYO",
-        "neighborhood": "ISLA TEJA"
+        "neighborhood": "ISLA TEJA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
@@ -413,7 +473,9 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "location": "PANAKA CAFE 2",
         "boro_name": "VALDIVIA",
         "street": "CAUPOLICAN 110",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "categoria": ["comidas"],
+        "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",

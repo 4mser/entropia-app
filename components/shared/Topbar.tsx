@@ -12,7 +12,7 @@ function Topbar() {
   return (
     <nav className='topbar md:hidden' >
       <Link href='/' className='flex items-center gap-4'>
-        <img src='/entropia.svg' alt='logo' width={110} height={110} />
+        <img src='https://app-valdi.s3.amazonaws.com/xplorers/tipografia-19.png' alt='logo' width={140} height={110} />
       </Link>
 
       <div className='flex items-center'>
