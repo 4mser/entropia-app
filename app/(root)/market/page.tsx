@@ -8,7 +8,7 @@ const page = () => {
             width={300}
             height={300}
             alt='logo exporers'
-            className='-translate-y-14'
+            className='-translate-y-14 spin-y'
          />
          {/* <p className='-translate-y-16 text-center px-10  text-white text-[12px] font-bold'>EN <span className='text-[#e6ab45]'>CAMINO</span></p> */}
     </div>
