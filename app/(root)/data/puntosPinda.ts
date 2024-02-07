@@ -21,7 +21,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "SAN JOSE",
         "street": "CALLE MARIQUINA 106",
         "neighborhood": "SAN JOSE",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -36,7 +36,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "SAN JOSE",
         "street": "CALLE MARIQUINA 1620",
         "neighborhood": "SAN JOSE",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -51,7 +51,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "SAN JOSE",
         "street": "km 828 ruta 5 sur lo lagos 5170000",
         "neighborhood": "SAN JOSE",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -66,7 +66,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "INFANTA ELENA 3590",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -81,7 +81,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "AV RAMON PICARTE 811",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -96,7 +96,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "AV ITALIA 1721",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -111,7 +111,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "CAMILO HENRIQUEZ 822 824",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -126,7 +126,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "VELASQUEZ COBARRUBIAS 260",
         "neighborhood": "NIEBLA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -141,7 +141,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "Guillermo Frick 270",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -156,7 +156,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VILLARRICA",
         "street": "CAM 2DA FAJA LT 6 LONCOTRARO ALTO",
         "neighborhood": "VILLARRICA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -171,7 +171,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "DEL CASTILLO 1125",
         "neighborhood": "NIEBLA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -186,7 +186,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "ANIBAL PINTO 1965",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -201,7 +201,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "MAFIL",
         "street": "CAROL URZUA 270",
         "neighborhood": "MAFIL",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -216,7 +216,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "LOS ALERCES 20",
         "neighborhood": "ISLA TEJA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -231,7 +231,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "LOS LAURELES 212",
         "neighborhood": "ISLA TEJA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -247,7 +247,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "street": "LOS ROBLES 075",
         "neighborhood": "ISLA TEJA",
         "image": "https://media-cdn.tripadvisor.com/media/photo-s/1a/b8/b0/8c/mia-bar.jpg",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -263,7 +263,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "street": "KM 25 NORTE, CAYUMAPU",
         "neighborhood": "ISLA TEJA",
         "image": "https://tiemporeal.periodismoudec.cl/wp-content/uploads/2022/04/Bundor-765x496.png",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -279,7 +279,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "street": "LOS ROBLES 500",
         "neighborhood": "ISLA TEJA",
         "image": "https://th.bing.com/th/id/OIP.kMM0VHmfxr64by8cCbxNWQHaHY?rs=1&pid=ImgDetMain",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -294,7 +294,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "COCHRANE 215",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -309,7 +309,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "GENERAL LAGOS 1089",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -324,7 +324,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "O'HIGGINS 374",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -339,7 +339,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "HOLZAPFEL 582",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -354,7 +354,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "CHOSHUENCO",
         "street": "INDEPENDENCIA #4",
         "neighborhood": "CHOSHUENCO",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -369,7 +369,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "GARCIA REYES 464",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -384,7 +384,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "PUERTO VARAS",
         "street": "AV LOS COLONOS 1176 LOCAL 8",
         "neighborhood": "PUERTO VARAS",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -399,7 +399,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "AINIL 535",
         "neighborhood": "ISLA TEJA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -414,7 +414,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "BEAUCHEF 641",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -429,7 +429,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "CAUPOLICAN 270",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -444,7 +444,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "KM 25 NORTE,CAYUMAPU",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -459,7 +459,7 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "RUTA T 350 1999 SILOS DE TOROBAYO",
         "neighborhood": "ISLA TEJA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
@@ -474,14 +474,15 @@ const puntosPinda: GeoJSON.FeatureCollection<GeoJSON.Geometry> = {
         "boro_name": "VALDIVIA",
         "street": "CAUPOLICAN 110",
         "neighborhood": "VALDIVIA",
-        "categoria": ["comidas"],
+        "categoria": ["comidasybebidas"],
         "codigoMision": 0,
       },
       "geometry": {
         "type": "Point",
         "coordinates": [-73.24276581308640, -39.81037926768760]
       }
-    }
+    },
+
   ]
 }
 

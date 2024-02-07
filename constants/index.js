@@ -77,7 +77,7 @@ export const bottombarLinks = [
   },
   {
     imgURL: "/assets/tokens.svg",
-    route: "/contenido",
+    route: "/tokens",
     label: "Contenido",
   },
   {
@@ -92,8 +92,8 @@ export const bottombarLinks = [
   },
   {
     imgURL: "/assets/tienda.svg",
-    route: "/store",
-    label: "Tiendas",
+    route: "/market",
+    label: "Mercado",
   },
 ];
 
