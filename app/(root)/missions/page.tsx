@@ -28,8 +28,19 @@ const Page: React.FC = () => {
             width={300}
             height={300}
             alt="Logo Xplorers"
-            className="-translate-y-14 cursor-pointer"
-            animate={isSpinning ? spinAnimation : {}}
+            className="cursor-pointer"
+            whileTap={{ scale: 0.9 }} // Opcional: Efecto de feedback al hacer clic
+            animate={{ rotate: 360 }}
+            transition={{
+              type: "spring",
+              stiffness: 60,
+              damping: 10,
+              mass: 2,
+              restDelta: 0.001, // Ajusta este valor para controlar cuándo la animación debe detenerse
+              from: 0,
+              repeat: 0,
+              duration: 2
+            }}
             onClick={handleClick}
         />
     </div>
