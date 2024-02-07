@@ -10,7 +10,7 @@ const page = () => {
             alt='logo exporers'
             className='-translate-y-14'
          />
-         <p className='-translate-y-16 text-center px-10  text-white text-[12px]'>¡Nos estamos preparando para la gran aventura! <span className='text-amber-400'>X</span>plorers estará aquí pronto, trayendo nuevas formas de ver y vivir el mundo. ¡No te despegues, que la diversión está <span className='text-amber-400'>cerca</span> de comenzar!</p>
+         {/* <p className='-translate-y-16 text-center px-10  text-white text-[12px] font-bold'>EN <span className='text-[#e6ab45]'>CAMINO</span></p> */}
     </div>
   )
 }
