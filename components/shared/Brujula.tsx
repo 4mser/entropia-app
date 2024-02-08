@@ -30,7 +30,7 @@ const Brujula: React.FC = () => {
             width={250}
             height={250}
             alt="Base de la brújula"
-            className={`cursor-pointer ${rotation === -45 ? 'shadow-amber-500/50' : ''}`}
+            className={`cursor-pointer ${rotation === -45 ? 'filter drop-shadow-md shadow-amber-400' : ''}`}
             style={{ position: 'absolute' }}
         />
         <img 
