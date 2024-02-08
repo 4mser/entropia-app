@@ -36,20 +36,20 @@ const Brujula: React.FC = () => {
   }, []);
 
   // Clase condicional para aplicar el box shadow cuando rotation es igual a -13
-  const boxShadowClass = rotation === -45 ? 'shadow-lg ring-1 ring-amber-500/50 filter drop-shadow-lg' : 'filter';
+  const boxShadowClass = rotation === -13 ? 'shadow-lg ring-1 ring-amber-500/50 filter drop-shadow-lg' : 'filter';
 
-  // Verifica si rotation es igual a -45 o 115 para mostrar la etiqueta "N"
-  const showN = rotation === -45 || rotation === 115;
+  // Verifica si rotation está en el rango de -20 a -55 para mostrar la etiqueta "N"
+  const showN = rotation >= -55 && rotation <= -20;
 
   return (
     <div ref={brujulaRef} className='flex items-center justify-center h-[80vh]'>
-        {showN && <p className='text-[#DD981D] absolute text-[25px] font-bold top-28'>N</p>}
+        {showN && <p className='text-[#DD981D] absolute text-[25px] transition-all font-bold top-28'>N</p>}
         <img 
             src="https://app-valdi.s3.amazonaws.com/xplorers/brujula1.png"
             width={250}
             height={250}
             alt="Base de la brújula"
-            className={`cursor-pointer ${rotation === -45 ? 'shadow-lg shadow-amber-500/50' : ''}`}
+            className={`cursor-pointer transition-all ${rotation === -13 ? 'shadow-amber-500/50' : ''}`}
             style={{ position: 'absolute' }}
         />
         <img 
