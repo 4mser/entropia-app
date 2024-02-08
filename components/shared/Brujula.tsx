@@ -39,11 +39,11 @@ const Brujula: React.FC = () => {
   const boxShadowClass = rotation === -13 ? 'shadow-lg ring-1 ring-amber-500/50 filter drop-shadow-lg' : 'filter';
 
   // Verifica si rotation está en el rango de -20 a -55 para mostrar la etiqueta "N"
-  const showN = rotation >= -55 && rotation <= -20;
+  const showN = rotation >= -55 && rotation <= -35;
 
   return (
     <div ref={brujulaRef} className='flex items-center justify-center h-[80vh]'>
-        {showN && <p className='text-[#DD981D] absolute text-[25px] transition-all font-bold top-28'>N</p>}
+        {showN && <p className='text-[#DD981D] absolute text-[25px] transition-all font-bold top-28'>PRIMERA PISTA</p>}
         <img 
             src="https://app-valdi.s3.amazonaws.com/xplorers/brujula1.png"
             width={250}
