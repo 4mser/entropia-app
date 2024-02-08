@@ -1,17 +1,40 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Brujula: React.FC = () => {
-  const [isSpinning, setIsSpinning] = useState(false);
+  const [rotation, setRotation] = useState(0);
 
+  useEffect(() => {
+    const handleOrientation = (event: DeviceOrientationEvent) => {
+      const { alpha } = event;
+      if (alpha !== null) {
+        setRotation(alpha);
+      }
+    };
 
-  const handleClick = (): void => {
-    setIsSpinning(!isSpinning);
-  };
+    // Solicitar acceso al giroscopio en iOS 13+
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+      DeviceOrientationEvent.requestPermission()
+        .then(permissionState => {
+          if (permissionState === 'granted') {
+            window.addEventListener('deviceorientation', handleOrientation, true);
+          }
+        })
+        .catch(console.error);
+    } else {
+      // Para otros dispositivos, solo añade el evento
+      window.addEventListener('deviceorientation', handleOrientation, true);
+    }
+
+    // Limpiar el evento al desmontar el componente
+    return () => {
+      window.removeEventListener('deviceorientation', handleOrientation, true);
+    };
+  }, []);
 
   return (
-    <div className='flex items-center justify-center h-[80dvh]'>
+    <div className='flex items-center justify-center h-[80vh]'>
         <motion.img 
             src="https://app-valdi.s3.amazonaws.com/xplorers/brujula1.png"
             width={250}
@@ -24,12 +47,11 @@ const Brujula: React.FC = () => {
               stiffness: 40,
               damping: 15,
               mass: 2,
-              restDelta: 0.001, // Ajusta este valor para controlar cuándo la animación debe detenerse
+              restDelta: 0.001,
               from: 0,
               repeat: 0,
               duration: 2
             }}
-            onClick={handleClick}
         />
         <motion.img 
             src="https://app-valdi.s3.amazonaws.com/xplorers/brujula2.png"
@@ -37,19 +59,17 @@ const Brujula: React.FC = () => {
             height={250}
             alt="Logo Xplorers"
             className="cursor-pointer absolute"
-            whileTap={{ rotate:360 }} // Opcional: Efecto de feedback al hacer clic
-            animate={{ rotate: 360 }}
+            style={{ rotate: rotation }} // Usa el estado de rotation aquí
             transition={{
               type: "spring",
               stiffness: 60,
               damping: 10,
               mass: 2,
-              restDelta: 0.002, // Ajusta este valor para controlar cuándo la animación debe detenerse
+              restDelta: 0.002,
               from: 0,
               repeat: 0,
               duration: 2
             }}
-            onClick={handleClick}
         />
     </div>
   );
