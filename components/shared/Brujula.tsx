@@ -1,35 +1,42 @@
 'use client'
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Brujula: React.FC = () => {
-  const [rotation, setRotation] = useState(0);
+  const [rotation, setRotation] = useState<number>(0);
 
   useEffect(() => {
     const handleOrientation = (event: DeviceOrientationEvent) => {
       const { alpha } = event;
-      if (alpha !== null) {
-        setRotation(alpha);
+      setRotation(alpha || 0);
+    };
+
+    const requestOrientationPermission = async () => {
+      // Verifica si DeviceOrientationEvent.requestPermission está disponible
+      if ('DeviceOrientationEvent' in window && typeof (DeviceOrientationEvent as any).requestPermission === 'function') {
+        try {
+          const permissionState = await (DeviceOrientationEvent as any).requestPermission();
+          if (permissionState === 'granted') {
+            window.addEventListener('deviceorientation', handleOrientation);
+          } else {
+            console.error("Permission not granted for DeviceOrientation");
+          }
+        } catch (error) {
+          console.error("Error requesting device orientation permission:", error);
+        }
+      } else {
+        // requestPermission no es necesario o no está disponible, agrega el listener directamente
+        window.addEventListener('deviceorientation', handleOrientation);
       }
     };
 
-    // Solicitar acceso al giroscopio en iOS 13+
-    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-      DeviceOrientationEvent.requestPermission()
-        .then(permissionState => {
-          if (permissionState === 'granted') {
-            window.addEventListener('deviceorientation', handleOrientation, true);
-          }
-        })
-        .catch(console.error);
-    } else {
-      // Para otros dispositivos, solo añade el evento
-      window.addEventListener('deviceorientation', handleOrientation, true);
-    }
+    // Solicita permiso al cargar el componente
+    requestOrientationPermission();
 
-    // Limpiar el evento al desmontar el componente
+    // Limpieza al desmontar el componente
     return () => {
-      window.removeEventListener('deviceorientation', handleOrientation, true);
+      window.removeEventListener('deviceorientation', handleOrientation);
     };
   }, []);
 
@@ -41,17 +48,6 @@ const Brujula: React.FC = () => {
             height={250}
             alt="Logo Xplorers"
             className="cursor-pointer absolute"
-            animate={{ rotate: 360 }}
-            transition={{
-              type: "spring",
-              stiffness: 40,
-              damping: 15,
-              mass: 2,
-              restDelta: 0.001,
-              from: 0,
-              repeat: 0,
-              duration: 2
-            }}
         />
         <motion.img 
             src="https://app-valdi.s3.amazonaws.com/xplorers/brujula2.png"
@@ -59,7 +55,7 @@ const Brujula: React.FC = () => {
             height={250}
             alt="Logo Xplorers"
             className="cursor-pointer absolute"
-            style={{ rotate: rotation }} // Usa el estado de rotation aquí
+            style={{ rotate: rotation }}
             transition={{
               type: "spring",
               stiffness: 60,
