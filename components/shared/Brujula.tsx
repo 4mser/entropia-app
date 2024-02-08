@@ -12,8 +12,21 @@ const Brujula: React.FC = () => {
       }
     };
 
-    // Agregar el event listener para el evento 'deviceorientation'
-    window.addEventListener('deviceorientation', handleOrientation, true);
+    const requestPermission = async () => {
+      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        // Esto es necesario para iOS 13+
+        const permission = await DeviceOrientationEvent.requestPermission();
+        if (permission === 'granted') {
+          window.addEventListener('deviceorientation', handleOrientation, true);
+        }
+      } else {
+        // Para navegadores que no requieren permiso
+        window.addEventListener('deviceorientation', handleOrientation, true);
+      }
+    };
+
+    // Solicitar permiso al cargar el componente
+    requestPermission();
 
     // Limpiar el event listener cuando el componente se desmonte
     return () => {
@@ -23,6 +36,7 @@ const Brujula: React.FC = () => {
 
   return (
     <div className='flex items-center justify-center h-[80vh]'>
+        <p className='text-[DD981D] absolute text-[15px]'>N</p>
         <img 
             src="https://app-valdi.s3.amazonaws.com/xplorers/brujula1.png"
             width={250}
